@@ -8,6 +8,7 @@ part of 'medication_model.dart';
 
 MedicationModel _$MedicationModelFromJson(Map<String, dynamic> json) =>
     MedicationModel(
+      id: json['id'] as String,
       name: json['name'] as String,
       description: json['description'] as String?,
       amount: json['amount'] as String,
@@ -19,6 +20,7 @@ MedicationModel _$MedicationModelFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$MedicationModelToJson(MedicationModel instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'name': instance.name,
       'description': instance.description,
       'amount': instance.amount,

@@ -7,6 +7,7 @@ part 'medication_model.g.dart';
 class MedicationModel extends Equatable {
 
   const MedicationModel({
+    required this.id,
     required this.name, 
     required this.description,
     required this.amount, 
@@ -15,6 +16,7 @@ class MedicationModel extends Equatable {
     required this.selectedDays, 
   });
 
+  final String id;
   final String name;
   final String? description;
   final String amount;
@@ -29,6 +31,7 @@ class MedicationModel extends Equatable {
   @override
   @override
   List<Object?> get props => [
+    id,
     name,
     description,
     amount,

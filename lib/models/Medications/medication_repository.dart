@@ -26,10 +26,39 @@ class DeleteMedicationsFailure extends MedicationFailure  {
 
 abstract class  MedicationRepository {
 
-  Future<MedicationModel> getMedication();
+  Future<List<MedicationModel>> getMedication();
 
-  Future<void> addMedications(MedicationModel medication);
+  addMedications(MedicationModel medication);
 
-  Future<void> deleteMedication(MedicationModel medication);
+  deleteMedication(MedicationModel medication);
+
+}
+
+class MediciationRepositoryImplementation extends MedicationRepository{
+
+  final List<MedicationModel> medications = [];
+
+  @override
+  addMedications(MedicationModel medication) {
+    try{
+      medications.add(medication);
+      return medications;
+    }catch(error, stackTrace){
+      Error.throwWithStackTrace(AddMedicationsFailure(error), stackTrace);
+    }
+  }
+
+  @override
+  deleteMedication(MedicationModel medication) {
+    medications.removeWhere((element) => element.id == medication.id);
+    return medications;
+  }
+  
+  @override
+  Future<List<MedicationModel>> getMedication() {
+    // TODO: implement getMedication
+    throw UnimplementedError();
+  }
+
 
 }
