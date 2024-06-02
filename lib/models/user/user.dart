@@ -1,4 +1,4 @@
-import 'package:domain/models/subscription.dart';
+import 'package:domain/models/subscription/subscription.dart';
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
