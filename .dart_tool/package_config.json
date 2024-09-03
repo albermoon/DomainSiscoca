@@ -3,21 +3,27 @@
   "packages": [
     {
       "name": "_fe_analyzer_shared",
-      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/_fe_analyzer_shared-64.0.0",
+      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/_fe_analyzer_shared-73.0.0",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "_macros",
+      "rootUri": "file:///Users/alunizad0r/development/flutter/bin/cache/dart-sdk/pkg/_macros",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
     },
     {
       "name": "analyzer",
-      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/analyzer-6.2.0",
+      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/analyzer-6.8.0",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.3"
     },
     {
       "name": "args",
-      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/args-2.4.2",
+      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/args-2.5.0",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.0"
     },
     {
       "name": "async",
@@ -45,27 +51,27 @@
     },
     {
       "name": "build_daemon",
-      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/build_daemon-4.0.0",
+      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/build_daemon-4.0.2",
       "packageUri": "lib/",
-      "languageVersion": "2.14"
+      "languageVersion": "3.4"
     },
     {
       "name": "build_resolvers",
-      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/build_resolvers-2.4.1",
+      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/build_resolvers-2.4.2",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "build_runner",
-      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/build_runner-2.4.6",
+      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/build_runner-2.4.12",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.5"
     },
     {
       "name": "build_runner_core",
-      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/build_runner_core-7.2.11",
+      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/build_runner_core-7.3.2",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.5"
     },
     {
       "name": "built_collection",
@@ -75,9 +81,9 @@
     },
     {
       "name": "built_value",
-      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/built_value-8.7.0",
+      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/built_value-8.9.2",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "3.0"
     },
     {
       "name": "checked_yaml",
@@ -87,15 +93,15 @@
     },
     {
       "name": "code_builder",
-      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/code_builder-4.7.0",
+      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/code_builder-4.10.0",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.0"
     },
     {
       "name": "collection",
-      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/collection-1.17.2",
+      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/collection-1.19.0",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "3.4"
     },
     {
       "name": "convert",
@@ -105,13 +111,13 @@
     },
     {
       "name": "crypto",
-      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/crypto-3.0.3",
+      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/crypto-3.0.5",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.4"
     },
     {
       "name": "dart_style",
-      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/dart_style-2.3.3",
+      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/dart_style-2.3.6",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -135,9 +141,9 @@
     },
     {
       "name": "frontend_server_client",
-      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/frontend_server_client-3.2.0",
+      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/frontend_server_client-4.0.0",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "3.0"
     },
     {
       "name": "glob",
@@ -147,9 +153,9 @@
     },
     {
       "name": "graphs",
-      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/graphs-2.3.1",
+      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/graphs-2.3.2",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "3.4"
     },
     {
       "name": "http_multi_server",
@@ -159,9 +165,9 @@
     },
     {
       "name": "http_parser",
-      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/http_parser-4.0.2",
+      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/http_parser-4.1.0",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "3.4"
     },
     {
       "name": "io",
@@ -171,19 +177,19 @@
     },
     {
       "name": "js",
-      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/js-0.6.7",
+      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/js-0.7.1",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.1"
     },
     {
       "name": "json_annotation",
-      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/json_annotation-4.8.1",
+      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/json_annotation-4.9.0",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.0"
     },
     {
       "name": "json_serializable",
-      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/json_serializable-6.7.1",
+      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/json_serializable-6.8.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -194,22 +200,28 @@
       "languageVersion": "2.19"
     },
     {
-      "name": "matcher",
-      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/matcher-0.12.16",
+      "name": "macros",
+      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/macros-0.1.2-main.4",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "matcher",
+      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/matcher-0.12.16+1",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
     },
     {
       "name": "meta",
-      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/meta-1.9.1",
+      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/meta-1.15.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "mime",
-      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/mime-1.0.4",
+      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/mime-1.0.6",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "3.2"
     },
     {
       "name": "package_config",
@@ -219,9 +231,9 @@
     },
     {
       "name": "path",
-      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/path-1.8.3",
+      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/path-1.9.0",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "3.0"
     },
     {
       "name": "pool",
@@ -237,25 +249,25 @@
     },
     {
       "name": "pubspec_parse",
-      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/pubspec_parse-1.2.3",
+      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/pubspec_parse-1.3.0",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "3.0"
     },
     {
       "name": "shelf",
-      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/shelf-1.4.1",
+      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/shelf-1.4.2",
       "packageUri": "lib/",
-      "languageVersion": "2.17"
+      "languageVersion": "3.4"
     },
     {
       "name": "shelf_web_socket",
-      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/shelf_web_socket-1.0.4",
+      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/shelf_web_socket-2.0.0",
       "packageUri": "lib/",
-      "languageVersion": "2.17"
+      "languageVersion": "3.0"
     },
     {
       "name": "source_gen",
-      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/source_gen-1.4.0",
+      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/source_gen-1.5.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -273,15 +285,15 @@
     },
     {
       "name": "stack_trace",
-      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/stack_trace-1.11.0",
+      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/stack_trace-1.11.1",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
     {
       "name": "stream_channel",
-      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/stream_channel-2.1.1",
+      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/stream_channel-2.1.2",
       "packageUri": "lib/",
-      "languageVersion": "2.14"
+      "languageVersion": "2.19"
     },
     {
       "name": "stream_transform",
@@ -291,9 +303,9 @@
     },
     {
       "name": "string_scanner",
-      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/string_scanner-1.2.0",
+      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/string_scanner-1.3.0",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "3.1"
     },
     {
       "name": "term_glyph",
@@ -303,9 +315,9 @@
     },
     {
       "name": "test_api",
-      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/test_api-0.6.0",
+      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/test_api-0.7.3",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "3.4"
     },
     {
       "name": "timing",
@@ -320,16 +332,34 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "uuid",
+      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/uuid-3.0.7",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "watcher",
       "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/watcher-1.1.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
-      "name": "web_socket_channel",
-      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/web_socket_channel-2.4.0",
+      "name": "web",
+      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/web-1.0.0",
       "packageUri": "lib/",
-      "languageVersion": "2.15"
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "web_socket",
+      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/web_socket-0.1.6",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "web_socket_channel",
+      "rootUri": "file:///Users/alunizad0r/.pub-cache/hosted/pub.dev/web_socket_channel-3.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
     },
     {
       "name": "yaml",
@@ -344,7 +374,10 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2024-04-09T23:50:55.008676Z",
+  "generated": "2024-09-03T01:12:14.434999Z",
   "generator": "pub",
-  "generatorVersion": "3.3.2"
+  "generatorVersion": "3.5.1",
+  "flutterRoot": "file:///Users/alunizad0r/development/flutter",
+  "flutterVersion": "3.24.1",
+  "pubCache": "file:///Users/alunizad0r/.pub-cache"
 }
