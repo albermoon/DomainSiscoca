@@ -1,33 +1,28 @@
 import 'dart:convert';
-import 'dart:math';
 
 class ScheduledNotification {
-
   int? id;
-  // Day of the week from 0 - 6 (Monday - Sunday)
   final int day;
-  final DateTime date;
+  final DateTime hour;
   bool enabled;
+
   ScheduledNotification({
     this.id,
     required this.day,
-    required this.date,
+    required this.hour,
     this.enabled = true,
-  }) {
-    id ??= Random().nextInt(999999);
-  }
-
+  });
 
   ScheduledNotification copyWith({
     int? id,
     int? day,
-    DateTime? date,
+    DateTime? hour,
     bool? enabled,
   }) {
     return ScheduledNotification(
       id: id ?? this.id,
       day: day ?? this.day,
-      date: date ?? this.date,
+      hour: hour ?? this.hour,
       enabled: enabled ?? this.enabled,
     );
   }
@@ -36,27 +31,39 @@ class ScheduledNotification {
     return <String, dynamic>{
       'id': id,
       'day': day,
-      'date': date.millisecondsSinceEpoch,
+      'hour': '${hour.hour.toString().padLeft(2, '0')}:${hour!.minute.toString().padLeft(2, '0')}' ,
       'enabled': enabled,
     };
   }
-
   factory ScheduledNotification.fromMap(Map<String, dynamic> map) {
     return ScheduledNotification(
-      id: map['id'] != null ? map['id'] as int : null,
+      id: map['id'] as int,
       day: map['day'] as int,
-      date: DateTime.fromMillisecondsSinceEpoch(map['date'] as int),
+      hour: _parseHour(map['hour']),
       enabled: map['enabled'] as bool,
     );
   }
 
+  static DateTime _parseHour(dynamic hourString) {
+    if (hourString == null) ;
+    if (hourString is String) {
+      final parts = hourString.split(':');
+      if (parts.length == 2) {
+        final now = DateTime.now();
+        return DateTime(now.year, now.month, now.day, int.parse(parts[0]), int.parse(parts[1]));
+      }
+    }
+    return DateTime.parse(hourString.toString());
+  }
+
   String toJson() => json.encode(toMap());
 
-  factory ScheduledNotification.fromJson(String source) => ScheduledNotification.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory ScheduledNotification.fromJson(String source) => 
+      ScheduledNotification.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
   String toString() {
-    return 'ScheduledNotification(id: $id, day: $day, date: $date, enabled: $enabled)';
+    return 'ScheduledNotification(id: $id, day: $day, hour: $hour, enabled: $enabled)';
   }
 
   @override
@@ -66,7 +73,7 @@ class ScheduledNotification {
     return 
       other.id == id &&
       other.day == day &&
-      other.date == date &&
+      other.hour == hour &&
       other.enabled == enabled;
   }
 
@@ -74,8 +81,7 @@ class ScheduledNotification {
   int get hashCode {
     return id.hashCode ^
       day.hashCode ^
-      date.hashCode ^
+      hour.hashCode ^
       enabled.hashCode;
   }
-
 }
