@@ -31,7 +31,7 @@ class ScheduledNotification {
     return <String, dynamic>{
       'id': id,
       'day': day,
-      'hour': '${hour.hour.toString().padLeft(2, '0')}:${hour!.minute.toString().padLeft(2, '0')}' ,
+      'hour': '${hour.hour.toString().padLeft(2, '0')}:${hour.minute.toString().padLeft(2, '0')}' ,
       'enabled': enabled,
     };
   }

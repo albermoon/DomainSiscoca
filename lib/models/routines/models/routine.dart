@@ -19,7 +19,7 @@ class Routine extends IRoutine {
     String? name,
     List<ScheduledNotification>? reminders,
     List<Habit>? habits,
-    List<Task>? tasks,
+    List<TaskRoutine>? tasks,
     String? description,
   }) {
     return Routine(
@@ -53,7 +53,7 @@ class Routine extends IRoutine {
       reminders: map['reminders'] != null ? List<ScheduledNotification>.from((map['reminders'])
         .map<ScheduledNotification>((x) => ScheduledNotification.fromMap(x as Map<String,dynamic>))) : null,
       habits: List<Habit>.from((map['habits']).map<Habit>((x) => Habit.fromMap(x))),
-      tasks: List<Task>.from((map['tasks']).map<Task>((x) => Task.fromMap(x))),
+      tasks: List<TaskRoutine>.from((map['tasks']).map<TaskRoutine>((x) => TaskRoutine.fromMap(x))),
       description: map['description'],
     );
   }

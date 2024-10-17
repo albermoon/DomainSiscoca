@@ -1,9 +1,9 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:domain/domain.dart';
 
-class Task extends ITask {
+class TaskRoutine extends ITask {
 
-  Task({
+  TaskRoutine({
     required super.idTask,
     required super.title,
     required super.description,
@@ -15,7 +15,7 @@ class Task extends ITask {
   });
 
 
-  Task copyWith({
+  TaskRoutine copyWith({
     int? idTask,
     String? title,
     String? description,
@@ -25,7 +25,7 @@ class Task extends ITask {
     String? type,
     List<ScheduledNotification>? notifications,
   }) {
-    return Task(
+    return TaskRoutine(
       idTask: idTask ?? super.idTask,
       title: title ?? super.title,
       description: description ?? super.description,
@@ -50,8 +50,8 @@ class Task extends ITask {
     };
   }
 
-  factory Task.fromMap(Map<String, dynamic> map) {
-    return Task(
+  factory TaskRoutine.fromMap(Map<String, dynamic> map) {
+    return TaskRoutine(
       idTask: map['idTask'] as int,
       title: map['title'] as String,
       description: map['description'] as String,
