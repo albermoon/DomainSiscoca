@@ -7,3 +7,4 @@ export 'user/user.dart';
 export 'task/_task.dart';
 export 'study/study.dart';
 export 'passport/passport.dart';
+export 'notification/notification.dart';
