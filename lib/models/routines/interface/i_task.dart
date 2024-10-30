@@ -1,8 +1,7 @@
-import 'package:domain/models/scheduled_notification/scheduled_notification.dart';
+import 'package:domain/domain.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class ITask extends Equatable {
-
   final int idTask;
   final String title;
   final String description;
@@ -11,6 +10,8 @@ abstract class ITask extends Equatable {
   final DateTime startDate;
   final String type;
   final List<ScheduledNotification> notifications;
+  final bool isActive;
+
   ITask({
     required this.idTask,
     required this.title,
@@ -19,8 +20,9 @@ abstract class ITask extends Equatable {
     required this.deadline,
     required this.startDate,
     required this.type,
-    required this.notifications,
-  });
+    List<ScheduledNotification>? notifications,
+    this.isActive = false,
+  }) : notifications = notifications ?? [];
 
   Map<String, dynamic> toMap() {
     throw UnimplementedError();
@@ -31,8 +33,17 @@ abstract class ITask extends Equatable {
   }
 
   @override
-  List<Object> get props {
-    return [idTask];
+  List<Object?> get props {
+    return [
+      idTask,
+      title,
+      description,
+      isCompleted,
+      deadline,
+      startDate,
+      type,
+      notifications,
+      isActive,
+    ];
   }
-
 }

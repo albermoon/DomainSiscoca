@@ -1,7 +1,7 @@
 import 'dart:convert';
+import 'package:domain/models/models.dart';
 import 'package:equatable/equatable.dart';
 import 'package:uuid/uuid.dart';
-import '../scheduled_notification/scheduled_notification.dart';
 
 class Medication extends Equatable {
   final String id;
@@ -15,7 +15,7 @@ class Medication extends Equatable {
   final List<int>? selectedDays;
   final bool? chronic;
   final bool activated;
-  final List<ScheduledNotification>? notifications;
+  final List<ScheduledNotification> notifications;
   final int created_by_id;
   final String created_by_type;  //'patient' 'doctor' 'admin'
 
@@ -31,17 +31,19 @@ class Medication extends Equatable {
     this.selectedDays,
     this.chronic,
     this.activated = true,
-    this.notifications,
+    List<ScheduledNotification>? notifications,
     required this.created_by_id,
     required this.created_by_type,
-  }) : id = id ?? const Uuid().v4();
+  }) : 
+    id = id ?? const Uuid().v4(),
+    notifications = notifications ?? [];
 
   @override
   List<Object?> get props => [
-        name, patient_id, description, medication_form, amount, takenMeal,
-        howLong, selectedDays, chronic, activated, notifications,
-        created_by_id, created_by_type,  // Added to props
-      ];
+    name, patient_id, description, medication_form, amount, takenMeal,
+    howLong, selectedDays, chronic, activated, notifications,
+    created_by_id, created_by_type,
+  ];
 
   Medication copyWith({
     String? id,
@@ -89,7 +91,7 @@ class Medication extends Equatable {
       'how_long': howLong?.toIso8601String().split('T')[0],
       'chronic': chronic,
       'activated': activated,
-      'notifications': notifications?.map((x) => x.toMap()).toList(),
+      'notifications': notifications.map((x) => x.toMap()).toList(),
       'created_by_id': created_by_id,
       'created_by_type': created_by_type,
     };
@@ -109,12 +111,12 @@ class Medication extends Equatable {
       chronic: map['chronic'] as bool?,
       activated: map['activated'] as bool? ?? true,
       notifications: map['notifications'] != null
-          ? List<ScheduledNotification>.from(
-              (map['notifications'] as List).map<ScheduledNotification>(
-                (x) => ScheduledNotification.fromMap(x as Map<String, dynamic>),
-              ),
-            )
-          : null,
+        ? List<ScheduledNotification>.from(
+            (map['notifications'] as List).map<ScheduledNotification>(
+              (x) => ScheduledNotification.fromMap(x as Map<String, dynamic>),
+            ),
+          )
+        : [], 
       created_by_id: map['created_by_id'] as int,
       created_by_type: map['created_by_type'] as String,  
     );

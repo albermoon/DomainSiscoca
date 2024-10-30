@@ -1,9 +1,7 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:domain/domain.dart';
 
-class Habit extends ITask {
-
-  Habit({
+class TaskRoutine extends ITask {
+  TaskRoutine({
     required super.idTask,
     required super.title,
     required super.description,
@@ -11,34 +9,35 @@ class Habit extends ITask {
     required super.deadline,
     required super.startDate,
     required super.type,
-    required super.notifications,
-  });
+    List<ScheduledNotification>? notifications,
+  }) : super(notifications: notifications ?? []);
 
-  ITask copyWith({
+  TaskRoutine copyWith({
     int? idTask,
     String? title,
     String? description,
     bool? isCompleted,
-    bool? isActive,
     DateTime? deadline,
     DateTime? startDate,
     String? type,
     List<ScheduledNotification>? notifications,
+    bool? isActive,
   }) {
-    return Habit(
-      idTask: idTask ?? super.idTask,
-      title: title ?? super.title,
-      description: description ?? super.description,
-      isCompleted: isCompleted ?? super.isCompleted,
-      deadline: deadline ?? super.deadline,
-      startDate: startDate ?? super.startDate,
-      type: type ?? super.type,
-      notifications: notifications ?? super.notifications,
+    return TaskRoutine(
+      idTask: idTask ?? this.idTask,
+      title: title ?? this.title,
+      description: description ?? this.description,
+      isCompleted: isCompleted ?? this.isCompleted,
+      deadline: deadline ?? this.deadline,
+      startDate: startDate ?? this.startDate,
+      type: type ?? this.type,
+      notifications: notifications ?? this.notifications,
     );
   }
 
+  @override
   Map<String, dynamic> toMap() {
-    return <String, dynamic>{
+    final map = <String, dynamic>{
       'idTask': idTask,
       'title': title,
       'description': description,
@@ -47,11 +46,13 @@ class Habit extends ITask {
       'startDate': startDate.toIso8601String(),
       'type': type,
       'notifications': notifications.map((x) => x.toMap()).toList(),
+      'isActive': isActive,
     };
+    return map;
   }
 
-  factory Habit.fromMap(Map<String, dynamic> map) {
-    return Habit(
+  factory TaskRoutine.fromMap(Map<String, dynamic> map) {
+    return TaskRoutine(
       idTask: map['idTask'] as int,
       title: map['title'] as String,
       description: map['description'] as String,
@@ -63,9 +64,16 @@ class Habit extends ITask {
         ? DateTime.parse(map['startDate'])
         : map['startDate'] as DateTime,
       type: map['type'] as String,
-      notifications: List<ScheduledNotification>.from((map['notifications'])
-        .map<ScheduledNotification>((x) => ScheduledNotification.fromMap(x as Map<String,dynamic>),),),
+      notifications: map['notifications'] != null
+        ? List<ScheduledNotification>.from(
+            (map['notifications'] as List).map((x) {
+              if (x is ScheduledNotification) {
+                return x;
+              }
+              return ScheduledNotification.fromMap(x as Map<String, dynamic>);
+            }),
+          )
+        : [],
     );
   }
-
 }

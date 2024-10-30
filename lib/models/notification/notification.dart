@@ -3,9 +3,11 @@ import 'package:equatable/equatable.dart';
 enum NotificationType {
   push,
   local,
-  medicalAlert,
   taskAlert,
-  news,
+  appointment,
+  news, 
+  medication,
+  taskRoutine,
 }
 
 class Notification extends Equatable {
@@ -15,6 +17,8 @@ class Notification extends Equatable {
   final DateTime timestamp;
   final NotificationType type;
   final Map<String, dynamic>? additionalData;
+  final String? imageUrl;
+  final DateTime? scheduledFor;
 
   const Notification({
     required this.id,
@@ -23,10 +27,12 @@ class Notification extends Equatable {
     required this.timestamp,
     required this.type,
     this.additionalData,
+    this.imageUrl,
+    this.scheduledFor,
   });
 
   @override
-  List<Object?> get props => [id, title, body, timestamp, type, additionalData];
+  List<Object?> get props => [id, title, body, timestamp, type, additionalData, imageUrl, scheduledFor];
 
   Notification copyWith({
     String? id,
@@ -35,6 +41,7 @@ class Notification extends Equatable {
     DateTime? timestamp,
     NotificationType? type,
     Map<String, dynamic>? additionalData,
+    DateTime? scheduledFor,
   }) {
     return Notification(
       id: id ?? this.id,
@@ -43,6 +50,8 @@ class Notification extends Equatable {
       timestamp: timestamp ?? this.timestamp,
       type: type ?? this.type,
       additionalData: additionalData ?? this.additionalData,
+      imageUrl:  imageUrl ?? this.imageUrl,
+      scheduledFor: scheduledFor ?? this.scheduledFor
     );
   }
 
@@ -54,6 +63,8 @@ class Notification extends Equatable {
       timestamp: DateTime.parse(json['timestamp']),
       type: NotificationType.values.firstWhere((e) => e.toString() == json['type']),
       additionalData: json['additionalData'],
+      imageUrl: json['imageUrl'] ?? null,
+      scheduledFor: json['scheduleFor'] ?? null,
     );
   }
 
@@ -65,6 +76,8 @@ class Notification extends Equatable {
       'timestamp': timestamp.toIso8601String(),
       'type': type.toString(),
       'additionalData': additionalData,
+      'imageUrl': imageUrl ?? null,
+      'scheduleFor': scheduledFor ?? null,
     };
   }
 }
