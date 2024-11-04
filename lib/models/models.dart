@@ -8,3 +8,4 @@ export 'task/_task.dart';
 export 'study/study.dart';
 export 'passport/passport.dart';
 export 'notification/notification.dart';
+export 'user_device/user_device.dart';
