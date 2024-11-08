@@ -1,35 +1,33 @@
 import 'package:domain/models/news/interface/i_category.dart';
 
 class NewsCategory extends INewsCategory {
-  final int id;
+  final int? id;
   final String description;
 
   NewsCategory({
+    this.id,
     required super.urlToImage,
     required super.category,
-    required this.id,
     required this.description,
   });
 
   factory NewsCategory.fromJson(Map<String, dynamic> map) {
     return NewsCategory(
+      id: map['id'] as int,
       urlToImage: map['image_url'] as String,
       category: map['title'] as String,
-      id: map['id'] as int,
       description: map['description'] as String,
     );
   }
 
   Map<String, dynamic> toJson() {
     return {
+      if (id != null) 'id': id, // Only include 'id' if it is not null
       'image_url': urlToImage,
       'title': category,
-      'id': id,
       'description': description,
     };
   }
-
-
   NewsCategory copyWith({
     String? urlToImage,
     String? category,

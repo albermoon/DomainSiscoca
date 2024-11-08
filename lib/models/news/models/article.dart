@@ -49,12 +49,8 @@ class Article {
       'title': title,
       'image_url': imageUrl,
       'read_time': readingTime,
-      'category_id': categoryId,
-      'date_create': dateCreate,
-      'date_update': dateUpdate,
       'description': description,
       'news_url': newsUrl,
-      'status': status,
       'category': category.toJson(),
     };
   }
