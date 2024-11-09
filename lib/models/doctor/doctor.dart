@@ -1,12 +1,14 @@
 class Doctor {
-  int id;
-  String email;
-  int isAdmin;
-  String name;
-  String surname;
+  final int? id;
+  final int? status;
+  final String email;
+  final int isAdmin;
+  final String name;
+  final String surname;
 
   Doctor({
-    required this.id,
+    this.id,
+    this.status,
     required this.email,
     required this.isAdmin,
     required this.name,
@@ -15,26 +17,32 @@ class Doctor {
 
   factory Doctor.fromJson(Map<String, dynamic> json) {
     return Doctor(
-      id: json['id'] ?? '',
+      // Nullable fields
+      id: json['id'],
+      status: json['status'],
+      // Required fields
       email: json['email'] ?? '',
-      isAdmin: json['is_admin'] ?? '',
+      isAdmin: json['is_admin'] ?? 0,
       name: json['name'] ?? '',
       surname: json['surname'] ?? '',
     );
   }
 
-  Map<String, dynamic> toJson() {
-    return {
-      'id': id,
-      'email': email,
-      'is_admin': isAdmin,
-      'name': name,
-      'surname': surname,
-    };
-  }
+  Map<String, dynamic> toJson() => {
+    // Nullable fields
+    'id': id,
+    'status': status,
+    
+    // Required fields
+    'email': email,
+    'is_admin': isAdmin,
+    'name': name,
+    'surname': surname,
+  };
 
   Doctor copyWith({
     int? id,
+    int? status,
     String? email,
     int? isAdmin,
     String? name,
@@ -42,6 +50,7 @@ class Doctor {
   }) {
     return Doctor(
       id: id ?? this.id,
+      status: status ?? this.status,
       email: email ?? this.email,
       isAdmin: isAdmin ?? this.isAdmin,
       name: name ?? this.name,

@@ -1,57 +1,99 @@
 class Study {
+  final int? id;
+  final DateTime? createdAt;
+  final DateTime? updatedAt;
+  final int? status;
   final String additionalData;
-  final DateTime createdAt;
   final int createdBy;
   final String description;
   final String email;
   final String hospital;
-  final int id;
   final String phone;
   final String responsiblePerson;
   final String studyName;
-  final DateTime updatedAt;
 
   Study({
+    this.id,
+    this.createdAt,
+    this.updatedAt,
+    this.status,
     required this.additionalData,
-    required this.createdAt,
     required this.createdBy,
     required this.description,
     required this.email,
     required this.hospital,
-    required this.id,
     required this.phone,
     required this.responsiblePerson,
     required this.studyName,
-    required this.updatedAt,
   });
 
   factory Study.fromJson(Map<String, dynamic> json) {
     return Study(
+      // Nullable fields
+      id: json['id'],
+      createdAt: json['created_at'] != null
+          ? DateTime.parse(json['created_at'])
+          : null,
+      updatedAt: json['updated_at'] != null
+          ? DateTime.parse(json['updated_at'])
+          : null,
+      status: json['status'],
+      // Required fields
       additionalData: json['additional_data'],
-      createdAt: DateTime.parse(json['created_at']),
       createdBy: json['created_by'],
       description: json['description'],
       email: json['email'],
       hospital: json['hospital'],
-      id: json['id'],
       phone: json['phone'],
       responsiblePerson: json['responsible_person'],
       studyName: json['study_name'],
-      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
   Map<String, dynamic> toJson() => {
-    'additional_data': additionalData,
-    'created_at': createdAt.toIso8601String(),
-    'created_by': createdBy,
-    'description': description,
-    'email': email,
-    'hospital': hospital,
-    'id': id,
-    'phone': phone,
-    'responsible_person': responsiblePerson,
-    'study_name': studyName,
-    'updated_at': updatedAt.toIso8601String(),
-  };
+        // Nullable fields
+        'id': id,
+        'created_at': createdAt?.toIso8601String(),
+        'updated_at': updatedAt?.toIso8601String(),
+        'status': status,
+        // Required fields
+        'additional_data': additionalData,
+        'created_by': createdBy,
+        'description': description,
+        'email': email,
+        'hospital': hospital,
+        'phone': phone,
+        'responsible_person': responsiblePerson,
+        'study_name': studyName,
+      };
+
+  Study copyWith({
+    int? id,
+    DateTime? createdAt,
+    DateTime? updatedAt,
+    int? status,
+    String? additionalData,
+    int? createdBy,
+    String? description,
+    String? email,
+    String? hospital,
+    String? phone,
+    String? responsiblePerson,
+    String? studyName,
+  }) {
+    return Study(
+      id: id ?? this.id,
+      createdAt: createdAt ?? this.createdAt,
+      updatedAt: updatedAt ?? this.updatedAt,
+      status: status ?? this.status,
+      additionalData: additionalData ?? this.additionalData,
+      createdBy: createdBy ?? this.createdBy,
+      description: description ?? this.description,
+      email: email ?? this.email,
+      hospital: hospital ?? this.hospital,
+      phone: phone ?? this.phone,
+      responsiblePerson: responsiblePerson ?? this.responsiblePerson,
+      studyName: studyName ?? this.studyName,
+    );
+  }
 }

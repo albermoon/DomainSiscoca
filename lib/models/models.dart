@@ -9,3 +9,5 @@ export 'study/study.dart';
 export 'passport/passport.dart';
 export 'notification/notification.dart';
 export 'user_device/user_device.dart';
+export 'hospital/hospital.dart';
+export 'doctor/doctor.dart';
