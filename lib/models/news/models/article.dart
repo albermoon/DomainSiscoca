@@ -1,29 +1,29 @@
 import 'package:domain/models/models.dart';
 
 class Article {
-  final int id;
+  final int? id;
   final String title;
   final String imageUrl;
   final int readingTime;
   final int categoryId;
-  final String dateCreate;
-  final String dateUpdate;
+  final String? dateCreate;
+  final String? dateUpdate;
   final String description;
   final String newsUrl;
-  final int status;
+  final int? status;
   final NewsCategory category;
 
   Article({
-    required this.id,
+    this.id,
     required this.title,
     required this.imageUrl,
     required this.readingTime,
     required this.categoryId,
-    required this.dateCreate,
-    required this.dateUpdate,
+    this.dateCreate,
+    this.dateUpdate,
     required this.description,
     required this.newsUrl,
-    required this.status,
+    this.status,
     required this.category,
   });
 
@@ -43,15 +43,17 @@ class Article {
     );
   }
 
+  get url_news => null;
+
   Map<String, dynamic> toJson() {
     return {
-      'id': id,
+      if (id != null) 'id': id,
       'title': title,
       'image_url': imageUrl,
       'read_time': readingTime,
       'description': description,
       'news_url': newsUrl,
-      'category': category.toJson(),
+      'category_id': category.id,
     };
   }
 
