@@ -52,9 +52,7 @@ class Study {
 
   Map<String, dynamic> toJson() => {
         // Nullable fields
-        'id': id,
-        'created_at': createdAt?.toIso8601String(),
-        'updated_at': updatedAt?.toIso8601String(),
+         if (id != null) 'id': id,
         'status': status,
         // Required fields
         'additional_data': additionalData,

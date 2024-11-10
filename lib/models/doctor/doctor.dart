@@ -19,7 +19,7 @@ class Doctor {
     return Doctor(
       // Nullable fields
       id: json['id'],
-      status: json['status'],
+      status: json['status'] ?? 1,
       // Required fields
       email: json['email'] ?? '',
       isAdmin: json['is_admin'] ?? 0,
@@ -30,8 +30,7 @@ class Doctor {
 
   Map<String, dynamic> toJson() => {
     // Nullable fields
-    'id': id,
-    'status': status,
+     if (id != null) 'id': id,
     
     // Required fields
     'email': email,
