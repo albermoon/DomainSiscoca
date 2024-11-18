@@ -1,6 +1,6 @@
 
 class ClinicalInfo {
-  final int uniqueId;
+  final int? uniqueId;
   final String allergies;
   final bool anticoagulation;
   final String anticoagulationMedication;
@@ -17,7 +17,7 @@ class ClinicalInfo {
     required this.implantableDevices,
     required this.increaseEndocarditisRisk,
     required this.pregnantRisk,
-    required this.uniqueId,
+    this.uniqueId,
   });
 
   factory ClinicalInfo.fromJson(Map<String, dynamic> json) {
@@ -41,6 +41,6 @@ class ClinicalInfo {
     'implantableDevices': implantableDevices,
     'increaseEndocarditisRisk': increaseEndocarditisRisk,
     'pregnantRisk': pregnantRisk,
-    'uniqueId': uniqueId,
+    if (uniqueId != null) 'uniqueId': uniqueId,
   };
 }

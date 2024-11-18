@@ -1,4 +1,4 @@
-import '_task.dart';
+import 'index.dart';
 
 class TaskItem {
   final String createdAt;
@@ -34,6 +34,7 @@ class TaskItem {
       status: json['status'] as int,
       taskId: json['task_id'] as int,
       task: Task.fromJson(json['task'] as Map<String, dynamic>),
+
     );
   }
 

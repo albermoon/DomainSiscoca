@@ -1,27 +1,26 @@
 import 'package:domain/models/models.dart';
 
 class MedicalPassport {
-  final ClinicalInfo clinicalInfo;
+  final int? id;
   final int doctorId;
+  final String patientId;
+  final ClinicalInfo? clinicalInfo;
   final String documentsOthers;
-  final int id;
   final List<Medication> medications;
   final Pathology pathology;
   final List<PatientConstant> patientConstants;
-  final int patientId;
   final List<Procedure> procedures;
-  final ResidualLesions residualLesions;
+  final List<ResidualLesions> residualLesions;
   final List<Study> studies;
-  final List<int> studyIdList;
-  final DateTime createdAt;
-  final DateTime updatedAt;
+  final List<int>? studyIdList;
+  final DateTime? createdAt;
+  final DateTime?updatedAt;
 
   MedicalPassport({
-    required this.clinicalInfo,
-    required this.createdAt,
+    this.clinicalInfo,
     required this.doctorId,
     required this.documentsOthers,
-    required this.id,
+    this.id,
     required this.medications,
     required this.pathology,
     required this.patientConstants,
@@ -29,8 +28,9 @@ class MedicalPassport {
     required this.procedures,
     required this.residualLesions,
     required this.studies,
-    required this.studyIdList,
-    required this.updatedAt,
+    this.studyIdList,
+    this.createdAt,
+    this.updatedAt,
   });
 
   factory MedicalPassport.fromJson(Map<String, dynamic> json) {
@@ -45,27 +45,59 @@ class MedicalPassport {
       patientConstants: List<PatientConstant>.from(json['patient_constants'].map((x) => PatientConstant.fromJson(x))),
       patientId: json['patient_id'],
       procedures: List<Procedure>.from(json['procedures'].map((x) => Procedure.fromJson(x))),
-      residualLesions: ResidualLesions.fromJson(json['residual_lesions']),
+      residualLesions: List<ResidualLesions>.from(json['residual_lesions'].map((x) => ResidualLesions.fromJson(x))),
       studies: List<Study>.from(json['studies'].map((x) => Study.fromJson(x))),
-      studyIdList: List<int>.from(json['study_id_list']),
       updatedAt: DateTime.parse(json['updated_at']),
+      studyIdList: List<int>.from(json['study_id_list']),
     );
   }
 
   Map<String, dynamic> toJson() => {
-    'clinical_info': clinicalInfo.toJson(),
-    'created_at': createdAt.toIso8601String(),
+    if (id != null) 'id': id,
+    if (clinicalInfo != null)  'clinical_info': clinicalInfo!.toJson(),
     'doctor_id': doctorId,
     'documents_others': documentsOthers,
-    'id': id,
     'medications': medications.map((x) => x.toJson()).toList(),
     'pathology': pathology.toJson(),
     'patient_constants': patientConstants.map((x) => x.toJson()).toList(),
     'patient_id': patientId,
     'procedures': procedures.map((x) => x.toJson()).toList(),
-    'residual_lesions': residualLesions.toJson(),
-    'studies': studies.map((x) => x.toJson()).toList(),
+    'residual_lesions': residualLesions.map((x) => x.toJson()).toList(),
+    // 'studies': studies.map((x) => x.toJson()).toList(),
     'study_id_list': studyIdList,
-    'updated_at': updatedAt.toIso8601String(),
   };
+
+  MedicalPassport copyWith({
+    int? id,
+    int? doctorId,
+    String? patientId,
+    ClinicalInfo? clinicalInfo,
+    String? documentsOthers,
+    List<Medication>? medications,
+    Pathology? pathology,
+    List<PatientConstant>? patientConstants,
+    List<Procedure>? procedures,
+    List<ResidualLesions>? residualLesions,
+    List<Study>? studies,
+    List<int>? studyIdList,
+    DateTime? createdAt,
+    DateTime? updatedAt,
+  }) {
+    return MedicalPassport(
+      id: id ?? this.id,
+      doctorId: doctorId ?? this.doctorId,
+      patientId: patientId ?? this.patientId,
+      clinicalInfo: clinicalInfo ?? this.clinicalInfo,
+      documentsOthers: documentsOthers ?? this.documentsOthers,
+      medications: medications ?? this.medications,
+      pathology: pathology ?? this.pathology,
+      patientConstants: patientConstants ?? this.patientConstants,
+      procedures: procedures ?? this.procedures,
+      residualLesions: residualLesions ?? this.residualLesions,
+      studies: studies ?? this.studies,
+      studyIdList: studyIdList ?? this.studyIdList,
+      createdAt: createdAt ?? this.createdAt,
+      updatedAt: updatedAt ?? this.updatedAt,
+    );
+  }
 }

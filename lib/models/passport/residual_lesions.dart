@@ -1,10 +1,10 @@
 class ResidualLesions {
   final String description;
-  final int uniqueId;
+  final int? uniqueId;
 
   ResidualLesions({
     required this.description,
-    required this.uniqueId,
+    this.uniqueId,
   });
 
   factory ResidualLesions.fromJson(Map<String, dynamic> json) {
@@ -16,6 +16,6 @@ class ResidualLesions {
 
   Map<String, dynamic> toJson() => {
     'description': description,
-    'uniqueId': uniqueId,
+    if (uniqueId != null) 'uniqueId': uniqueId,
   };
 }

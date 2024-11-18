@@ -4,7 +4,7 @@ export 'notification/scheduled_notification.dart';
 export 'news/news.dart';
 export 'authentication_client/authentication_user.dart';
 export 'user/user.dart';
-export 'task/_task.dart';
+export 'task/index.dart';
 export 'study/study.dart';
 export 'passport/passport.dart';
 export 'notification/notification.dart';

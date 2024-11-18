@@ -1,5 +1,4 @@
-
-import '../../models/task/_task.dart';
+import 'package:domain/models/task/index.dart';
 
 abstract class TaskRepository {
   Future<TaskList> getTasks();

@@ -1,9 +1,9 @@
 class PatientConstant {
   final String bloodPressure;
   final double height;
-  final double oxygenSaturation;
-  final int pulseRate;
-  final int uniqueId;
+  final String oxygenSaturation;
+  final String pulseRate;
+  final int? uniqueId;
   final double weight;
 
   PatientConstant({
@@ -11,7 +11,7 @@ class PatientConstant {
     required this.height,
     required this.oxygenSaturation,
     required this.pulseRate,
-    required this.uniqueId,
+    this.uniqueId,
     required this.weight,
   });
 
@@ -31,7 +31,7 @@ class PatientConstant {
     'height': height,
     'oxygenSaturation': oxygenSaturation,
     'pulseRate': pulseRate,
-    'uniqueId': uniqueId,
+    if (uniqueId != null) 'uniqueId': uniqueId,
     'weight': weight,
   };
 }

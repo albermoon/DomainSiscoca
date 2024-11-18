@@ -1,20 +1,20 @@
-import 'package:domain/models/models.dart';
+import 'package:domain/models/authentication_client/authentication_user.dart';
 import 'package:equatable/equatable.dart';
 
-class User  extends Equatable{
-  final String id;
-  final int? patientId;
+class User extends Equatable {
+  final String? id;
+  final String? patientId;
   final String? email;
   final String? name;
   final String? surname;
   final bool isNewUser;
-  final DateTime? birthDate;
+  final String? birthDate;
   final String? device;
   final String? patientNumber;
   final String? sex;
 
   const User({
-    required this.id,
+    this.id,
     this.patientId,
     this.email,
     this.name,
@@ -25,51 +25,61 @@ class User  extends Equatable{
     this.patientNumber,
     this.sex,
   });
-  
 
   bool get isAnonymous => this == User.anonymous;
 
-  static const User anonymous = User(
-    id: '',
-  );
+  static const User anonymous = User(id: '');
 
   factory User.fromJson(Map<String, dynamic> json) {
+    String? birthDateFormatted;
+    if (json['birth_date'] != null) {
+      final parts = json['birth_date'].toString().split('-');
+      if (parts.length == 3) {
+        birthDateFormatted = '${parts[2]}-${parts[1]}-${parts[0]}';
+      }
+    }
+
     return User(
-      // id: json['id'],
-      // patientId:json['id'],
       id: json['id'] != null ? json['id'].toString() : '',
-      patientId: json['id'] is int ? json['id'] : int.tryParse(json['id']?.toString() ?? ''),
+      patientId: json['id'].toString(),
       email: json['email'],
       name: json['name'],
       surname: json['surname'],
       isNewUser: json['isNewUser'] ?? true,
-      birthDate: json['birth_date'] != null ? DateTime.parse(json['birth_date']) : null,
+      birthDate: birthDateFormatted,
       device: json['device'],
-      patientNumber: json['patientNumber'],
+      patientNumber: json['num_patient'],
       sex: json['sex'],
     );
   }
 
   Map<String, dynamic> toJson() {
-    return {
-      // 'id': id,
-      'id': patientId,
+    String? formattedDate;
+    if (birthDate != null) {
+      final parts = birthDate!.split('/');
+      if (parts.length == 3) {
+        formattedDate = '${parts[2]}-${parts[1]}-${parts[0]}';
+      }
+    }
+
+    final json = {
+      if (id != null) 'id': id,
       'email': email,
       'name': name,
       'surname': surname,
-      'isNewUser': isNewUser,
-      'birthDate': birthDate?.toIso8601String(),
-      'device': device,
-      'patientNumber': patientNumber,
+      'birth_date': formattedDate,
+      'num_patient': patientNumber,
       'sex': sex,
     };
+    print('Patient JSON: $json');
+    return json;
   }
 
   factory User.fromAuthenticationUser({
     required AuthenticationUser authenticationUser,
-    int? patientId,
+    String? patientId,
     String? surname,
-    DateTime? birthDate,
+    String? birthDate,
     String? device,
     String? patientNumber,
     String? sex,
@@ -87,7 +97,18 @@ class User  extends Equatable{
       sex: sex,
     );
   }
-  
+
   @override
-  List<Object?> get props => [ id, patientId, email, name, surname, isNewUser, birthDate, device, patientNumber, sex ];
+  List<Object?> get props => [
+        id,
+        patientId,
+        email,
+        name,
+        surname,
+        isNewUser,
+        birthDate,
+        device,
+        patientNumber,
+        sex
+      ];
 }

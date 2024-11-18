@@ -8,7 +8,7 @@ class Medication extends Equatable {
   final String name;
   final String? description;
   final String? medication_form;
-  final int patient_id;
+  final String patient_id;
   final String? amount;
   final String? takenMeal;
   final DateTime? howLong;
@@ -16,7 +16,7 @@ class Medication extends Equatable {
   final bool? chronic;
   final bool activated;
   final List<ScheduledNotification> notifications;
-  final int created_by_id;
+  final int? created_by_id;
   final String created_by_type;  //'patient' 'doctor' 'admin'
 
   Medication({
@@ -32,7 +32,7 @@ class Medication extends Equatable {
     this.chronic,
     this.activated = true,
     List<ScheduledNotification>? notifications,
-    required this.created_by_id,
+    this.created_by_id,
     required this.created_by_type,
   }) : 
     id = id ?? const Uuid().v4(),
@@ -48,7 +48,7 @@ class Medication extends Equatable {
   Medication copyWith({
     String? id,
     String? name,
-    int? patient_id,
+    String? patient_id,
     String? description,
     String? medication_form,
     String? amount,
@@ -101,7 +101,7 @@ class Medication extends Equatable {
     return Medication(
       id: map['id'] as String? ?? const Uuid().v4(),
       name: map['name'] as String,
-      patient_id: map['patient_id'] as int,
+      patient_id: map['patient_id'] as String,
       description: map['description'] as String?,
       medication_form: map['medication_form'] as String?,
       amount: map['amount'] as String?,

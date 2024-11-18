@@ -1,4 +1,4 @@
-import 'package:domain/models/task/_task.dart';
+import 'package:domain/models/task/index.dart';
 
 class TaskResponse {
   final int? id;

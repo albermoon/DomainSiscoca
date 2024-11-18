@@ -1,11 +1,10 @@
-import 'package:domain/models/task/_task.dart';
+import 'package:domain/domain.dart';
 
 class Task {
-  final int id;
+  final int? id;
   final String name;
   final String advertisement;
   final int assignedTasks;
-  
   final int createdById;
   final String description;
   final TaskType taskType;
@@ -21,7 +20,7 @@ class Task {
     required this.createdAt,
     required this.createdById,
     required this.description,
-    required this.id,
+    this.id,
     required this.name,
     required this.status,
     required this.taskType,
@@ -29,6 +28,36 @@ class Task {
     required this.updatedAt,
     required this.details,
   });
+
+  Task copyWith({
+    int? id,
+    String? name,
+    String? advertisement,
+    int? assignedTasks,
+    int? createdById,
+    String? description,
+    TaskType? taskType,
+    int? taskTypeId,
+    String? createdAt,
+    String? updatedAt,
+    TaskDetails? details,
+    int? status,
+  }) {
+    return Task(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      advertisement: advertisement ?? this.advertisement,
+      assignedTasks: assignedTasks ?? this.assignedTasks,
+      createdById: createdById ?? this.createdById,
+      description: description ?? this.description,
+      taskType: taskType ?? this.taskType,
+      taskTypeId: taskTypeId ?? this.taskTypeId,
+      createdAt: createdAt ?? this.createdAt,
+      updatedAt: updatedAt ?? this.updatedAt,
+      details: details ?? this.details,
+      status: status ?? this.status,
+    );
+  }
 
   factory Task.fromJson(Map<String, dynamic> json) {
     var taskType = TaskType.fromJson(json['task_type'] as Map<String, dynamic>);
@@ -68,7 +97,7 @@ class Task {
       'created_at': createdAt,
       'created_by_id': createdById,
       'description': description,
-      'id': id,
+      if (id != null) 'id': id!,
       'name': name,
       'status': status,
       'task_type': taskType.toJson(),

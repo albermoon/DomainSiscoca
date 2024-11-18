@@ -1,12 +1,12 @@
 class Pathology {
   final String generalPathology;
   final String specificPathology;
-  final int uniqueId;
+  final int? uniqueId;
 
   Pathology({
     required this.generalPathology,
     required this.specificPathology,
-    required this.uniqueId,
+    this.uniqueId,
   });
 
   factory Pathology.fromJson(Map<String, dynamic> json) {
@@ -18,8 +18,8 @@ class Pathology {
   }
 
   Map<String, dynamic> toJson() => {
+    if (uniqueId != null) 'uniqueId': uniqueId,
     'generalPathology': generalPathology,
     'specificPathology': specificPathology,
-    'uniqueId': uniqueId,
   };
 }

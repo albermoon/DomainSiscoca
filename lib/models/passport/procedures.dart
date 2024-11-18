@@ -1,10 +1,10 @@
 class Procedure {
   final String description;
-  final int uniqueId;
+  final int? uniqueId;
 
   Procedure({
     required this.description,
-    required this.uniqueId,
+    this.uniqueId,
   });
 
   factory Procedure.fromJson(Map<String, dynamic> json) {
@@ -16,6 +16,6 @@ class Procedure {
 
   Map<String, dynamic> toJson() => {
     'description': description,
-    'uniqueId': uniqueId,
+    if (uniqueId != null) 'uniqueId': uniqueId,
   };
 }
