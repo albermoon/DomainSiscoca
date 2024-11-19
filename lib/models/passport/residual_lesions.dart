@@ -18,4 +18,14 @@ class ResidualLesions {
     'description': description,
     if (uniqueId != null) 'uniqueId': uniqueId,
   };
+
+  ResidualLesions copyWith({
+    String? description,
+    int? uniqueId,
+  }) {
+    return ResidualLesions(
+      description: description ?? this.description,
+      uniqueId: uniqueId ?? this.uniqueId,
+    );
+  }
 }

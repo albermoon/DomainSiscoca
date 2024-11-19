@@ -18,4 +18,14 @@ class Procedure {
     'description': description,
     if (uniqueId != null) 'uniqueId': uniqueId,
   };
+
+  Procedure copyWith({
+    String? description,
+    int? uniqueId,
+  }) {
+    return Procedure(
+      description: description ?? this.description,
+      uniqueId: uniqueId ?? this.uniqueId,
+    );
+  }
 }
