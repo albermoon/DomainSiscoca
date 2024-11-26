@@ -43,7 +43,7 @@ class MedicalPassport {
       medications: List<Medication>.from(json['medications'].map((x) => Medication.fromJson(x))),
       pathology: Pathology.fromJson(json['pathology']),
       patientConstants: List<PatientConstant>.from(json['patient_constants'].map((x) => PatientConstant.fromJson(x))),
-      patientId: json['patient_id'],
+      patientId: json['patient_id'].toString(),
       procedures: List<Procedure>.from(json['procedures'].map((x) => Procedure.fromJson(x))),
       residualLesions: List<ResidualLesions>.from(json['residual_lesions'].map((x) => ResidualLesions.fromJson(x))),
       studies: List<Study>.from(json['studies'].map((x) => Study.fromJson(x))),
