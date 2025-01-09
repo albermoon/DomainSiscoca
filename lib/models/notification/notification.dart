@@ -19,6 +19,7 @@ class Notification extends Equatable {
   final Map<String, dynamic>? additionalData;
   final String? imageUrl;
   final DateTime? scheduledFor;
+  final bool? isRead;
 
   const Notification({
     required this.id,
@@ -29,10 +30,11 @@ class Notification extends Equatable {
     this.additionalData,
     this.imageUrl,
     this.scheduledFor,
+    this.isRead,
   });
 
   @override
-  List<Object?> get props => [id, title, body, timestamp, type, additionalData, imageUrl, scheduledFor];
+  List<Object?> get props => [id, title, body, timestamp, type, additionalData, imageUrl, scheduledFor, isRead];
 
   Notification copyWith({
     String? id,
@@ -42,6 +44,7 @@ class Notification extends Equatable {
     NotificationType? type,
     Map<String, dynamic>? additionalData,
     DateTime? scheduledFor,
+    bool? isRead, 
   }) {
     return Notification(
       id: id ?? this.id,
@@ -51,7 +54,8 @@ class Notification extends Equatable {
       type: type ?? this.type,
       additionalData: additionalData ?? this.additionalData,
       imageUrl:  imageUrl ?? this.imageUrl,
-      scheduledFor: scheduledFor ?? this.scheduledFor
+      scheduledFor: scheduledFor ?? this.scheduledFor,
+      isRead: isRead ?? this.isRead,
     );
   }
 
@@ -65,6 +69,7 @@ class Notification extends Equatable {
       additionalData: json['additionalData'],
       imageUrl: json['imageUrl'] ?? null,
       scheduledFor: json['scheduleFor'] ?? null,
+      isRead: json['isRead'] ?? null,
     );
   }
 
@@ -78,6 +83,7 @@ class Notification extends Equatable {
       'additionalData': additionalData,
       'imageUrl': imageUrl ?? null,
       'scheduleFor': scheduledFor ?? null,
+      'isRead': isRead ?? null,
     };
   }
 }

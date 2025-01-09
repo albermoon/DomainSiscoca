@@ -101,7 +101,7 @@ class Medication extends Equatable {
     return Medication(
       id: map['id'] as String? ?? const Uuid().v4(),
       name: map['name'] as String,
-      patient_id: map['patient_id'] as String,
+      patient_id: (map['patient_id'] as int).toString(),
       description: map['description'] as String?,
       medication_form: map['medication_form'] as String?,
       amount: map['amount'] as String?,
