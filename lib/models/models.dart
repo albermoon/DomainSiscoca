@@ -11,3 +11,5 @@ export 'notification/notification.dart';
 export 'user_device/user_device.dart';
 export 'hospital/hospital.dart';
 export 'doctor/doctor.dart';
+export 'alerts/alerts.dart';
+export 'alerts/alerts_threshold.dart';

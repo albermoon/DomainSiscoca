@@ -4,3 +4,5 @@ export 'task/task_response_repository.dart';
 export 'study/study_repository.dart';
 export 'passport/medical_passport_repository.dart';
 export 'notification/notification_repository.dart';
+export 'alerts/alerts_repository.dart';
+export 'alerts/alerts_threshold_repository.dart';
