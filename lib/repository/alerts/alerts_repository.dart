@@ -8,7 +8,7 @@ abstract class IAlertRepository {
   Future<Alert> createAlert(Alert alert);
 
   /// Updates an existing alert's information
-  Future<Alert> updateAlert(String id, Alert alert);
+  Future<Alert> updateAlert( Alert alert);
 
   /// Deletes an alert record by ID
   Future<void> deleteAlert(String id);
