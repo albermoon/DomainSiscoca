@@ -1,4 +1,4 @@
-export 'medications/medication_model.dart';
+export 'medication/medication_model.dart';
 export 'routines/routines.dart';
 export 'notification/scheduled_notification.dart';
 export 'news/news.dart';
