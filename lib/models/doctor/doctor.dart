@@ -1,5 +1,5 @@
 class Doctor {
-  final int? id;
+  final String? id;
   final int? status;
   final String email;
   final int isAdmin;
@@ -40,7 +40,7 @@ class Doctor {
   };
 
   Doctor copyWith({
-    int? id,
+    String? id,
     int? status,
     String? email,
     int? isAdmin,

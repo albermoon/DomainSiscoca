@@ -2,7 +2,7 @@ import 'package:domain/models/models.dart';
 
 class MedicalPassport {
   final int? id;
-  final int doctorId;
+  final String? doctorId;
   final String patientId;
   final ClinicalInfo? clinicalInfo;
   final String documentsOthers;
@@ -17,10 +17,10 @@ class MedicalPassport {
   final DateTime?updatedAt;
 
   MedicalPassport({
-    this.clinicalInfo,
-    required this.doctorId,
-    required this.documentsOthers,
     this.id,
+    this.clinicalInfo,
+    this.doctorId,
+    required this.documentsOthers,
     required this.medications,
     required this.pathology,
     required this.patientConstants,
@@ -69,7 +69,7 @@ class MedicalPassport {
 
   MedicalPassport copyWith({
     int? id,
-    int? doctorId,
+    String? doctorId,
     String? patientId,
     ClinicalInfo? clinicalInfo,
     String? documentsOthers,

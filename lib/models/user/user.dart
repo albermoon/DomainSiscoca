@@ -3,7 +3,6 @@ import 'package:equatable/equatable.dart';
 
 class User extends Equatable {
   final String? id;
-  final String? patientId;
   final String? email;
   final String? name;
   final String? surname;
@@ -15,7 +14,6 @@ class User extends Equatable {
 
   const User({
     this.id,
-    this.patientId,
     this.email,
     this.name,
     this.surname,
@@ -41,7 +39,6 @@ class User extends Equatable {
 
     return User(
       id: json['id'] != null ? json['id'].toString() : '',
-      patientId: json['id'].toString(),
       email: json['email'],
       name: json['name'],
       surname: json['surname'],
@@ -77,7 +74,6 @@ class User extends Equatable {
 
   factory User.fromAuthenticationUser({
     required AuthenticationUser authenticationUser,
-    String? patientId,
     String? surname,
     String? birthDate,
     String? device,
@@ -86,7 +82,6 @@ class User extends Equatable {
   }) {
     return User(
       id: authenticationUser.id,
-      patientId: patientId,
       email: authenticationUser.email,
       name: authenticationUser.name,
       surname: surname,
@@ -101,7 +96,6 @@ class User extends Equatable {
   @override
   List<Object?> get props => [
         id,
-        patientId,
         email,
         name,
         surname,

@@ -4,7 +4,7 @@ class Study {
   final DateTime? updatedAt;
   final int? status;
   final String additionalData;
-  final int createdBy;
+  final String? createdBy;
   final String description;
   final String email;
   final String hospital;
@@ -18,7 +18,7 @@ class Study {
     this.updatedAt,
     this.status,
     required this.additionalData,
-    required this.createdBy,
+    this.createdBy,
     required this.description,
     required this.email,
     required this.hospital,
@@ -71,7 +71,7 @@ class Study {
     DateTime? updatedAt,
     int? status,
     String? additionalData,
-    int? createdBy,
+    String? createdBy,
     String? description,
     String? email,
     String? hospital,
