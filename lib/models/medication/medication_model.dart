@@ -16,7 +16,6 @@ class Medication extends Equatable {
   final bool? chronic;
   final bool activated;
   final List<ScheduledNotification> notifications;
-  final int? created_by_id;
   final String created_by_type;  //'patient' 'doctor' 'admin'
 
   Medication({
@@ -32,7 +31,6 @@ class Medication extends Equatable {
     this.chronic,
     this.activated = true,
     List<ScheduledNotification>? notifications,
-    this.created_by_id,
     required this.created_by_type,
   }) : 
     id = id ?? const Uuid().v4(),
@@ -42,7 +40,7 @@ class Medication extends Equatable {
   List<Object?> get props => [
     name, patient_id, description, medication_form, amount, takenMeal,
     howLong, selectedDays, chronic, activated, notifications,
-    created_by_id, created_by_type,
+    created_by_type,
   ];
 
   Medication copyWith({
@@ -58,7 +56,6 @@ class Medication extends Equatable {
     bool? chronic,
     bool? activated,
     List<ScheduledNotification>? notifications,
-    int? created_by_id,
     String? created_by_type,
   }) {
     return Medication(
@@ -74,7 +71,6 @@ class Medication extends Equatable {
       chronic: chronic ?? this.chronic,
       activated: activated ?? this.activated,
       notifications: notifications ?? this.notifications,
-      created_by_id: created_by_id ?? this.created_by_id,
       created_by_type: created_by_type ?? this.created_by_type,
     );
   }
@@ -92,7 +88,6 @@ class Medication extends Equatable {
       'chronic': chronic,
       'activated': activated,
       'notifications': notifications.map((x) => x.toMap()).toList(),
-      'created_by_id': created_by_id,
       'created_by_type': created_by_type,
     };
   }
@@ -101,7 +96,7 @@ class Medication extends Equatable {
     return Medication(
       id: map['id'] as String? ?? const Uuid().v4(),
       name: map['name'] as String,
-      patient_id: (map['patient_id'] as int).toString(),
+      patient_id: (map['patient_id'] as String),
       description: map['description'] as String?,
       medication_form: map['medication_form'] as String?,
       amount: map['amount'] as String?,
@@ -116,8 +111,7 @@ class Medication extends Equatable {
               (x) => ScheduledNotification.fromMap(x as Map<String, dynamic>),
             ),
           )
-        : [], 
-      created_by_id: map['created_by_id'] as int,
+        : [],
       created_by_type: map['created_by_type'] as String,  
     );
   }

@@ -6,7 +6,7 @@ class TaskItem {
   final int id;
   final bool isGlobalTask;
   final int isOneTime;
-  final int? patientId;
+  final String? patientId;
   final int status;
   final Task task;
   final int taskId;
@@ -30,7 +30,7 @@ class TaskItem {
       id: json['id'] as int, 
       isGlobalTask: json['is_global_task'] as bool,
       isOneTime: json['is_one_time'] as int? ?? 0,
-      patientId: json['patient_id'] as int?,
+      patientId: json['patient_id'] as String?,
       status: json['status'] as int,
       taskId: json['task_id'] as int,
       task: Task.fromJson(json['task'] as Map<String, dynamic>),

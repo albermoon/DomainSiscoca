@@ -6,7 +6,7 @@ class Task {
   //show a alert message in the mobile
   final String? advertisement;
   final int? assignedTasks;
-  final int? createdById;
+  final String? createdById;
   final String description;
   final TaskType? taskType;
   final int taskTypeId;
@@ -36,7 +36,7 @@ class Task {
     String? name,
     String? advertisement,
     int? assignedTasks,
-    int? createdById,
+    String? createdById,
     String? description,
     TaskType? taskType,
     int? taskTypeId,
@@ -82,7 +82,7 @@ class Task {
       advertisement: json['advertisement'] as String? ?? '',
       assignedTasks: json['assigned_tasks'] as int? ?? 0,
       createdAt: json['created_at'] as String? ?? '',
-      createdById: json['created_by_id'] as int? ?? 0,
+      createdById: json['created_by_id'] as String? ?? '',
       description: json['description'] as String? ?? '',
       status: json['status'] as int? ?? 0,
       taskType: taskType,

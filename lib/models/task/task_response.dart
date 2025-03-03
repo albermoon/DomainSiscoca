@@ -3,7 +3,7 @@ import 'package:domain/models/task/index.dart';
 class TaskResponse {
   final int? id;
   final int taskId;
-  final int patientId;
+  final String patientId;
   final Task? task;
   final DateTime? completedAt;
   final TaskResponseDetails details;
@@ -31,7 +31,7 @@ class TaskResponse {
     return TaskResponse(
       id: json['id'] as int,
       taskId: json['task_id'] as int,
-      patientId: json['patient_id'] as int,
+      patientId: json['patient_id'] as String,
       completedAt: json['completed_at'] != null ? DateTime.parse(json['completed_at']) : null,
       details: details,
       task: Task.fromJson(json['task'] as Map<String, dynamic>),
