@@ -1,3 +1,5 @@
+import '../hospital/hospital.dart';
+
 class Doctor {
   final String? id;
   final int? status;
@@ -5,6 +7,7 @@ class Doctor {
   final int isAdmin;
   final String name;
   final String surname;
+  final Hospital? hospital;
 
   Doctor({
     this.id,
@@ -13,6 +16,7 @@ class Doctor {
     required this.isAdmin,
     required this.name,
     required this.surname,
+    this.hospital
   });
 
   factory Doctor.fromJson(Map<String, dynamic> json) {
@@ -25,6 +29,7 @@ class Doctor {
       isAdmin: json['is_admin'] ?? 0,
       name: json['name'] ?? '',
       surname: json['surname'] ?? '',
+      hospital: json['hospital'] != null ? Hospital.fromJson(json['hospital']) : null,
     );
   }
 
@@ -54,6 +59,7 @@ class Doctor {
       isAdmin: isAdmin ?? this.isAdmin,
       name: name ?? this.name,
       surname: surname ?? this.surname,
+      hospital: hospital ?? this.hospital,
     );
   }
 }
