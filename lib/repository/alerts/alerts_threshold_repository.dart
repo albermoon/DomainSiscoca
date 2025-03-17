@@ -8,11 +8,11 @@ abstract class IAlertThresholdRepository {
   Future<AlertThreshold> createAlertThreshold(AlertThreshold threshold);
 
   /// Updates an existing alert threshold's information
-  Future<AlertThreshold> updateAlertThreshold(String id, AlertThreshold threshold);
+  Future<AlertThreshold> updateAlertThreshold(int id, AlertThreshold threshold);
 
   /// Deletes an alert threshold record by ID
-  Future<void> deleteAlertThreshold(String id);
+  Future<void> deleteAlertThreshold(int id);
 
   /// Retrieves all thresholds for a specific patient
-  Future<List<AlertThreshold>> getThresholdsByPatient(int patientId);
+  Future<List<AlertThreshold>> getThresholdsByPatient(String patientId);
 }

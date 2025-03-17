@@ -1,6 +1,6 @@
 class AlertThreshold {
   final int id;
-  final int? patientId;
+  final String? patientId;
   final String measureType;
   final String severity;
   final List<String> conditions;
@@ -16,7 +16,7 @@ class AlertThreshold {
   factory AlertThreshold.fromJson(Map<String, dynamic> json) {
     return AlertThreshold(
       id: json['id'] as int,
-      patientId: json['patient_id'] as int?,
+      patientId: json['patient_id'] as String?,
       measureType: json['measure_type'] as String,
       severity: json['severity'] as String,
       conditions: (json['conditions'] as List).cast<String>(),

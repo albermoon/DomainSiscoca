@@ -14,8 +14,8 @@ abstract class IAlertRepository {
   Future<void> deleteAlert(String id);
 
   /// Retrieves all alerts for a specific patient
-  Future<List<Alert>> getPatientAlerts(int patientId);
+  Future<List<Alert>> getPatientAlerts(String patientId);
 
   /// Marks an alert as read by a specific doctor
-  Future<Alert> markAsRead(String id, int doctorId);
+  Future<Alert> markAsRead(String id, String doctorId);
 }
