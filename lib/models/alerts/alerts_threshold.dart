@@ -26,7 +26,7 @@ class AlertThreshold {
   Map<String, dynamic> toJson() {
     return {
       'id': id,
-      'patientId': patientId,
+      'patient_id': patientId,
       'measure_type': measureType,
       'severity': severity,
       'conditions': conditions,

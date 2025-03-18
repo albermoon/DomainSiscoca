@@ -85,7 +85,6 @@ class Medication extends Equatable {
       'amount': amount,
       'takenMeal': takenMeal,
       'how_long': howLong?.toIso8601String().split('T')[0],
-      'chronic': chronic,
       'activated': activated,
       'notifications': notifications.map((x) => x.toMap()).toList(),
       'created_by_type': created_by_type,
