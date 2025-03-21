@@ -21,4 +21,6 @@ abstract class NotificationsRepository {
   Future<void> markAsRead(String id);
   Future<void> markAllAsRead();
   Future<void> removeNotification(String id);
+  
+  Future<void> registerDeviceAfterLogin(String userId);
 }
