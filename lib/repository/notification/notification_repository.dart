@@ -8,10 +8,13 @@ abstract class NotificationsRepository {
   Future<bool> isPermissionGranted();
 
   Future<void> saveNotification(Notification notification);
+  Future<void> showImmediateNotification(Notification notification);
   List<Notification> getUnreadNotifications();
   Future<List<Notification>> getNotifications();
   List<Notification> getPendingNotifications();
 
+  Future<bool> isNotificationTypeEnabled(NotificationType type);
+  
   Future<void> activateLocalNotificacion(List<dynamic> noti);
   Future<void> desactivateLocalNotification(List<dynamic> noti);
 

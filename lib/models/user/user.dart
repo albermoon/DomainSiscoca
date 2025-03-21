@@ -24,9 +24,8 @@ class User extends Equatable {
     this.sex,
   });
 
-  bool get isAnonymous => this == User.anonymous;
-
-  static const User anonymous = User(id: '');
+  // Representa un usuario no autenticado
+  static const anonymous = User(id: '');
 
   factory User.fromJson(Map<String, dynamic> json) {
     String? birthDateFormatted;
