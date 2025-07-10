@@ -14,3 +14,4 @@ export 'doctor/doctor.dart';
 export 'alerts/alerts.dart';
 export 'alerts/alerts_threshold.dart';
 export 'document_attachment/document_attachment.dart';
+export 'message/message.dart';
