@@ -2,7 +2,7 @@ import 'package:equatable/equatable.dart';
 
 enum MessageScope { all, hospital, study, patient }
 
-class Message extends Equatable {
+class NotificationMessage extends Equatable {
   final int? id;
   final String title;
   final String body;
@@ -10,8 +10,9 @@ class Message extends Equatable {
   final String? createdById;
   final DateTime createdAt;
   final List<String>? targetIds;
+  final bool isRead;
 
-  const Message({
+  const NotificationMessage({
     this.id,
     required this.title,
     required this.body,
@@ -19,11 +20,12 @@ class Message extends Equatable {
     this.createdById,
     required this.createdAt,
     this.targetIds,
+    this.isRead = false,
   });
 
-  factory Message.fromJson(Map<String, dynamic> json) {
+  factory NotificationMessage.fromJson(Map<String, dynamic> json) {
     final scopeStr = (json['scope'] ?? 'all').toString();
-    return Message(
+    return NotificationMessage(
       id: json['id'] as int?,
       title: json['title'] as String? ?? '',
       body: json['body'] as String? ?? '',
@@ -47,6 +49,28 @@ class Message extends Equatable {
         if (targetIds != null) 'target_ids': targetIds,
       };
 
+  NotificationMessage copyWith({
+    int? id,
+    String? title,
+    String? body,
+    MessageScope? scope,
+    String? createdById,
+    DateTime? createdAt,
+    List<String>? targetIds,
+    bool? isRead,
+  }) {
+    return NotificationMessage(
+      id: id ?? this.id,
+      title: title ?? this.title,
+      body: body ?? this.body,
+      scope: scope ?? this.scope,
+      createdById: createdById ?? this.createdById,
+      createdAt: createdAt ?? this.createdAt,
+      targetIds: targetIds ?? this.targetIds,
+      isRead: isRead ?? this.isRead,
+    );
+  }
+
   @override
-  List<Object?> get props => [id, title, body, scope, createdById, createdAt, targetIds];
+  List<Object?> get props => [id, title, body, scope, createdById, createdAt, targetIds, isRead];
 } 
