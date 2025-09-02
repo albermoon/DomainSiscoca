@@ -19,6 +19,7 @@ class Notification extends Equatable {
   final Map<String, dynamic>? additionalData;
   final String? imageUrl;
   final DateTime? scheduledFor;
+  final DateTime? endDate;
   final bool? isRead;
 
   const Notification({
@@ -30,6 +31,7 @@ class Notification extends Equatable {
     this.additionalData,
     this.imageUrl,
     this.scheduledFor,
+    this.endDate,
     this.isRead,
   });
 
@@ -44,6 +46,7 @@ class Notification extends Equatable {
     NotificationType? type,
     Map<String, dynamic>? additionalData,
     DateTime? scheduledFor,
+    DateTime? endDate,
     bool? isRead, 
   }) {
     return Notification(
@@ -55,6 +58,7 @@ class Notification extends Equatable {
       additionalData: additionalData ?? this.additionalData,
       imageUrl:  imageUrl ?? this.imageUrl,
       scheduledFor: scheduledFor ?? this.scheduledFor,
+      endDate: endDate ?? this.endDate,
       isRead: isRead ?? this.isRead,
     );
   }
