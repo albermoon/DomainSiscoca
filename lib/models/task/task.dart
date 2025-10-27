@@ -10,6 +10,7 @@ class Task {
   final String description;
   final TaskType? taskType;
   final int taskTypeId;
+  final int? recurrence_interval;
   //json with the survey
   final TaskDetails details;
   final String? createdAt;
@@ -26,6 +27,7 @@ class Task {
     this.id,
     this.status,
     this.taskType,
+    this.recurrence_interval,
     required this.taskTypeId,
     this.createdAt,
     this.updatedAt,
@@ -38,6 +40,7 @@ class Task {
     int? assignedTasks,
     String? createdById,
     String? description,
+    int? recurrence_interval,
     TaskType? taskType,
     int? taskTypeId,
     String? createdAt,
@@ -52,6 +55,7 @@ class Task {
       assignedTasks: assignedTasks ?? this.assignedTasks,
       createdById: createdById ?? this.createdById,
       description: description ?? this.description,
+      recurrence_interval: recurrence_interval ?? this.recurrence_interval,
       taskType: taskType ?? this.taskType,
       taskTypeId: taskTypeId ?? this.taskTypeId,
       createdAt: createdAt ?? this.createdAt,
@@ -84,6 +88,7 @@ class Task {
       createdAt: json['created_at'] as String? ?? '',
       createdById: json['created_by_id'] as String? ?? '',
       description: json['description'] as String? ?? '',
+      recurrence_interval: json['recurrence_interval'] as int?,
       status: json['status'] as int? ?? 0,
       taskType: taskType,
       taskTypeId: json['task_type_id'] as int? ?? 0,
@@ -105,6 +110,7 @@ class Task {
       if (createdAt != null) 'created_at': createdAt!,
       if (updatedAt != null) 'updated_at': updatedAt!,
       if (status != null) 'status': status!,
+      if (recurrence_interval != null) 'recurrence_interval': recurrence_interval!,
       ...details.toJson(),
     };
   }
