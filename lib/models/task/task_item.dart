@@ -4,7 +4,6 @@ class TaskItem {
   final String createdAt;
   final DateTime? dueDate;
   final int id;
-
   final String? patientId;
   final int status;
   final Task task;
