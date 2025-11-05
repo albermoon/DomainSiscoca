@@ -2,7 +2,6 @@ import 'package:domain/domain.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class IRoutine extends Equatable {
-
   final int id;
   final String imageUri;
   final String name;
@@ -24,5 +23,4 @@ abstract class IRoutine extends Equatable {
   List<Object> get props {
     return [id];
   }
-
 }

@@ -14,7 +14,7 @@ class MedicalPassport {
   final List<Study> studies;
   final List<int>? studyIdList;
   final DateTime? createdAt;
-  final DateTime?updatedAt;
+  final DateTime? updatedAt;
 
   MedicalPassport({
     this.id,
@@ -53,19 +53,19 @@ class MedicalPassport {
   }
 
   Map<String, dynamic> toJson() => {
-    if (id != null) 'id': id,
-    if (clinicalInfo != null)  'clinical_info': clinicalInfo!.toJson(),
-    'doctor_id': doctorId,
-    'documents_others': documentsOthers,
-    'medications': medications.map((x) => x.toJson()).toList(),
-    'pathology': pathology.toJson(),
-    'patient_constants': patientConstants.map((x) => x.toJson()).toList(),
-    'patient_id': patientId,
-    'procedures': procedures.map((x) => x.toJson()).toList(),
-    'residual_lesions': residualLesions.map((x) => x.toJson()).toList(),
-    // 'studies': studies.map((x) => x.toJson()).toList(),
-    'study_id_list': studyIdList,
-  };
+        if (id != null) 'id': id,
+        if (clinicalInfo != null) 'clinical_info': clinicalInfo!.toJson(),
+        'doctor_id': doctorId,
+        'documents_others': documentsOthers,
+        'medications': medications.map((x) => x.toJson()).toList(),
+        'pathology': pathology.toJson(),
+        'patient_constants': patientConstants.map((x) => x.toJson()).toList(),
+        'patient_id': patientId,
+        'procedures': procedures.map((x) => x.toJson()).toList(),
+        'residual_lesions': residualLesions.map((x) => x.toJson()).toList(),
+        // 'studies': studies.map((x) => x.toJson()).toList(),
+        'study_id_list': studyIdList,
+      };
 
   MedicalPassport copyWith({
     int? id,

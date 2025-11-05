@@ -73,4 +73,4 @@ class NotificationMessage extends Equatable {
 
   @override
   List<Object?> get props => [id, title, body, scope, createdById, createdAt, targetIds, isRead];
-} 
+}

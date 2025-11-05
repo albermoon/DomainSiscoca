@@ -25,8 +25,7 @@ class DocumentAttachment extends Equatable {
     required this.uploadedAt,
   });
 
-  factory DocumentAttachment.fromJson(Map<String, dynamic> json) =>
-      DocumentAttachment(
+  factory DocumentAttachment.fromJson(Map<String, dynamic> json) => DocumentAttachment(
         id: json['id'],
         userId: json['user_id'],
         uploaderRole: json['uploader_role'],
@@ -65,4 +64,4 @@ class DocumentAttachment extends Equatable {
         sizeInBytes,
         uploadedAt,
       ];
-} 
+}

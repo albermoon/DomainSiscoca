@@ -24,7 +24,7 @@ class Alert {
   factory Alert.fromJson(Map<String, dynamic> json) {
     return Alert(
       id: json['id'] as int,
-      patientId: User.fromJson(json['patient']), 
+      patientId: User.fromJson(json['patient']),
       createdAt: DateTime.parse(json['created_at'] as String),
       isRead: json['is_read'] == true || json['is_read'] == 1,
       alertThreshold: AlertThreshold.fromJson(json['alert_threshold']),

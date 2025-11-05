@@ -1,7 +1,6 @@
 import 'package:domain/models/models.dart';
 
 abstract class NotificationsRepository {
-
   Stream<Notification> get notificationStream;
   Future<void> init();
   Future<void> requestPermissions();
@@ -14,7 +13,7 @@ abstract class NotificationsRepository {
   List<Notification> getPendingNotifications();
 
   Future<bool> isNotificationTypeEnabled(NotificationType type);
-  
+
   Future<void> activateLocalNotificacion(List<dynamic> noti);
   Future<void> desactivateLocalNotification(List<dynamic> noti);
 
@@ -22,6 +21,6 @@ abstract class NotificationsRepository {
   Future<void> markAllAsRead();
   Future<void> removeNotification(String id);
   Future<void> clearAllNotifications();
-  
+
   Future<void> registerDeviceAfterLogin(String userId);
 }

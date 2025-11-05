@@ -31,12 +31,8 @@ class Study {
     return Study(
       // Nullable fields
       id: json['id'],
-      createdAt: json['created_at'] != null
-          ? DateTime.parse(json['created_at'])
-          : null,
-      updatedAt: json['updated_at'] != null
-          ? DateTime.parse(json['updated_at'])
-          : null,
+      createdAt: json['created_at'] != null ? DateTime.parse(json['created_at']) : null,
+      updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at']) : null,
       status: json['status'],
       // Required fields
       additionalData: json['additional_data'],
@@ -52,7 +48,7 @@ class Study {
 
   Map<String, dynamic> toJson() => {
         // Nullable fields
-         if (id != null) 'id': id,
+        if (id != null) 'id': id,
         'status': status,
         // Required fields
         'additional_data': additionalData,

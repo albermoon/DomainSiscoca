@@ -27,11 +27,11 @@ class PatientConstant {
   }
 
   Map<String, dynamic> toJson() => {
-    'bloodPressure': bloodPressure,
-    'height': height,
-    'oxygenSaturation': oxygenSaturation,
-    'pulseRate': pulseRate,
-    if (uniqueId != null) 'uniqueId': uniqueId,
-    'weight': weight,
-  };
+        'bloodPressure': bloodPressure,
+        'height': height,
+        'oxygenSaturation': oxygenSaturation,
+        'pulseRate': pulseRate,
+        if (uniqueId != null) 'uniqueId': uniqueId,
+        'weight': weight,
+      };
 }

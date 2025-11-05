@@ -66,4 +66,4 @@ class Appointment extends Equatable {
 
   @override
   List<Object?> get props => [id, title, dateTime, doctor, location];
-} 
+}

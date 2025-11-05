@@ -8,20 +8,13 @@ class TaskItem {
   final int status;
   final Task task;
 
-  TaskItem({
-    required this.createdAt,
-    this.dueDate,
-    required this.id,
-    this.patientId,
-    required this.status,
-    required this.task
-  });
+  TaskItem({required this.createdAt, this.dueDate, required this.id, this.patientId, required this.status, required this.task});
 
   factory TaskItem.fromJson(Map<String, dynamic> json) {
     return TaskItem(
       createdAt: json['created_at'] as String,
       dueDate: json['due_date'] != null ? DateTime.parse(json['due_date'] as String) : null,
-      id: json['id'] as int, 
+      id: json['id'] as int,
       patientId: json['patient_id'] as String?,
       status: json['status'] as int,
       task: Task.fromJson(json['task'] as Map<String, dynamic>),

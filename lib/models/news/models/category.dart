@@ -28,6 +28,7 @@ class NewsCategory extends INewsCategory {
       'description': description,
     };
   }
+
   NewsCategory copyWith({
     String? urlToImage,
     String? category,

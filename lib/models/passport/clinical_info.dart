@@ -1,4 +1,3 @@
-
 class ClinicalInfo {
   final int? uniqueId;
   final String allergies;
@@ -34,13 +33,13 @@ class ClinicalInfo {
   }
 
   Map<String, dynamic> toJson() => {
-    'allergies': allergies,
-    'anticoagulation': anticoagulation,
-    'anticoagulationMedication': anticoagulationMedication,
-    'deviceBrands': deviceBrands,
-    'implantableDevices': implantableDevices,
-    'increaseEndocarditisRisk': increaseEndocarditisRisk,
-    'pregnantRisk': pregnantRisk,
-    if (uniqueId != null) 'uniqueId': uniqueId,
-  };
+        'allergies': allergies,
+        'anticoagulation': anticoagulation,
+        'anticoagulationMedication': anticoagulationMedication,
+        'deviceBrands': deviceBrands,
+        'implantableDevices': implantableDevices,
+        'increaseEndocarditisRisk': increaseEndocarditisRisk,
+        'pregnantRisk': pregnantRisk,
+        if (uniqueId != null) 'uniqueId': uniqueId,
+      };
 }

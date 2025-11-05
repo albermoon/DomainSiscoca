@@ -26,12 +26,8 @@ class Hospital {
   factory Hospital.fromJson(Map<String, dynamic> json) {
     return Hospital(
       id: json['id'],
-      createdAt: json['created_at'] != null
-          ? DateTime.parse(json['created_at'])
-          : null,
-      updatedAt: json['updated_at'] != null
-          ? DateTime.parse(json['updated_at'])
-          : null,
+      createdAt: json['created_at'] != null ? DateTime.parse(json['created_at']) : null,
+      updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at']) : null,
       address: json['address'],
       city: json['city'],
       email: json['email'],

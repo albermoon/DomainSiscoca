@@ -43,27 +43,18 @@ class UserDevice {
       userId: json['user_id'],
       fcm: json['fcm'],
       language: json['language'],
-      creationDate: json['creation_date'] != null 
-          ? DateTime.parse(json['creation_date'])
-          : null,
-      lastConnection: json['last_connection'] != null 
-          ? DateTime.parse(json['last_connection'])
-          : null,
+      creationDate: json['creation_date'] != null ? DateTime.parse(json['creation_date']) : null,
+      lastConnection: json['last_connection'] != null ? DateTime.parse(json['last_connection']) : null,
       status: json['status'],
     );
   }
 
   Map<String, dynamic> toJson() {
-    return {
-      'user_id': userId,
-      'fcm': fcm,
-      'language': language
-    };
+    return {'user_id': userId, 'fcm': fcm, 'language': language};
   }
 
   @override
   String toString() {
     return 'UserDevice(id: $id, userId: $userId, fcm: $fcm, language: $language, creationDate: $creationDate, lastConnection: $lastConnection, status: $status)';
   }
-
 }

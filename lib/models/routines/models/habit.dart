@@ -2,7 +2,6 @@
 import 'package:domain/domain.dart';
 
 class Habit extends ITask {
-
   Habit({
     required super.idTask,
     required super.title,
@@ -56,16 +55,14 @@ class Habit extends ITask {
       title: map['title'] as String,
       description: map['description'] as String,
       isCompleted: map['isCompleted'] as bool,
-      deadline: map['deadline'] is String
-        ? DateTime.parse(map['deadline'])
-        : map['deadline'] as DateTime,
-      startDate: map['startDate'] is String
-        ? DateTime.parse(map['startDate'])
-        : map['startDate'] as DateTime,
+      deadline: map['deadline'] is String ? DateTime.parse(map['deadline']) : map['deadline'] as DateTime,
+      startDate: map['startDate'] is String ? DateTime.parse(map['startDate']) : map['startDate'] as DateTime,
       type: map['type'] as String,
-      notifications: List<ScheduledNotification>.from((map['notifications'])
-        .map<ScheduledNotification>((x) => ScheduledNotification.fromMap(x as Map<String,dynamic>),),),
+      notifications: List<ScheduledNotification>.from(
+        (map['notifications']).map<ScheduledNotification>(
+          (x) => ScheduledNotification.fromMap(x as Map<String, dynamic>),
+        ),
+      ),
     );
   }
-
 }

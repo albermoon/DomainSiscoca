@@ -50,4 +50,3 @@ class TaskResponse {
 abstract class TaskResponseDetails {
   Map<String, dynamic> toJson();
 }
-

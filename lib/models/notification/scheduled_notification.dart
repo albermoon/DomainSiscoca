@@ -31,10 +31,11 @@ class ScheduledNotification {
     return <String, dynamic>{
       'id': id,
       'day': day,
-      'hour': '${hour.hour.toString().padLeft(2, '0')}:${hour.minute.toString().padLeft(2, '0')}' ,
+      'hour': '${hour.hour.toString().padLeft(2, '0')}:${hour.minute.toString().padLeft(2, '0')}',
       'enabled': enabled,
     };
   }
+
   factory ScheduledNotification.fromMap(Map<String, dynamic> map) {
     return ScheduledNotification(
       id: map['id'] as int,
@@ -58,8 +59,7 @@ class ScheduledNotification {
 
   String toJson() => json.encode(toMap());
 
-  factory ScheduledNotification.fromJson(String source) => 
-      ScheduledNotification.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory ScheduledNotification.fromJson(String source) => ScheduledNotification.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
   String toString() {
@@ -69,19 +69,12 @@ class ScheduledNotification {
   @override
   bool operator ==(covariant ScheduledNotification other) {
     if (identical(this, other)) return true;
-  
-    return 
-      other.id == id &&
-      other.day == day &&
-      other.hour == hour &&
-      other.enabled == enabled;
+
+    return other.id == id && other.day == day && other.hour == hour && other.enabled == enabled;
   }
 
   @override
   int get hashCode {
-    return id.hashCode ^
-      day.hashCode ^
-      hour.hashCode ^
-      enabled.hashCode;
+    return id.hashCode ^ day.hashCode ^ hour.hashCode ^ enabled.hashCode;
   }
 }

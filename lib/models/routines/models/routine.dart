@@ -1,17 +1,14 @@
-
 import 'package:domain/domain.dart';
 
 class Routine extends IRoutine {
-  
-  Routine({
-    required super.id,
-    required super.imageUri,
-    required super.name,
-    super.reminders,
-    required super.habits,
-    required super.tasks,
-    required super.description
-  });
+  Routine(
+      {required super.id,
+      required super.imageUri,
+      required super.name,
+      super.reminders,
+      required super.habits,
+      required super.tasks,
+      required super.description});
 
   Routine copyWith({
     int? id,
@@ -50,12 +47,13 @@ class Routine extends IRoutine {
       id: map['id'],
       imageUri: map['imageUri'],
       name: map['name'],
-      reminders: map['reminders'] != null ? List<ScheduledNotification>.from((map['reminders'])
-        .map<ScheduledNotification>((x) => ScheduledNotification.fromMap(x as Map<String,dynamic>))) : null,
+      reminders: map['reminders'] != null
+          ? List<ScheduledNotification>.from(
+              (map['reminders']).map<ScheduledNotification>((x) => ScheduledNotification.fromMap(x as Map<String, dynamic>)))
+          : null,
       habits: List<Habit>.from((map['habits']).map<Habit>((x) => Habit.fromMap(x))),
       tasks: List<TaskRoutine>.from((map['tasks']).map<TaskRoutine>((x) => TaskRoutine.fromMap(x))),
       description: map['description'],
     );
   }
-  
 }

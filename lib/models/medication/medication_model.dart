@@ -16,7 +16,7 @@ class Medication extends Equatable {
   final bool? chronic;
   final bool activated;
   final List<ScheduledNotification> notifications;
-  final String created_by_type;  //'patient' 'doctor' 'admin'
+  final String created_by_type; //'patient' 'doctor' 'admin'
 
   Medication({
     String? id,
@@ -32,16 +32,24 @@ class Medication extends Equatable {
     this.activated = true,
     List<ScheduledNotification>? notifications,
     required this.created_by_type,
-  }) : 
-    id = id ?? const Uuid().v4(),
-    notifications = notifications ?? [];
+  })  : id = id ?? const Uuid().v4(),
+        notifications = notifications ?? [];
 
   @override
   List<Object?> get props => [
-    name, patient_id, description, medication_form, amount, takenMeal,
-    howLong, selectedDays, chronic, activated, notifications,
-    created_by_type,
-  ];
+        name,
+        patient_id,
+        description,
+        medication_form,
+        amount,
+        takenMeal,
+        howLong,
+        selectedDays,
+        chronic,
+        activated,
+        notifications,
+        created_by_type,
+      ];
 
   Medication copyWith({
     String? id,
@@ -105,13 +113,13 @@ class Medication extends Equatable {
       chronic: map['chronic'] as bool?,
       activated: map['activated'] as bool? ?? true,
       notifications: map['notifications'] != null
-        ? List<ScheduledNotification>.from(
-            (map['notifications'] as List).map<ScheduledNotification>(
-              (x) => ScheduledNotification.fromMap(x as Map<String, dynamic>),
-            ),
-          )
-        : [],
-      created_by_type: map['created_by_type'] as String,  
+          ? List<ScheduledNotification>.from(
+              (map['notifications'] as List).map<ScheduledNotification>(
+                (x) => ScheduledNotification.fromMap(x as Map<String, dynamic>),
+              ),
+            )
+          : [],
+      created_by_type: map['created_by_type'] as String,
     );
   }
 

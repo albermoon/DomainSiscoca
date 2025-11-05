@@ -15,9 +15,9 @@ class ResidualLesions {
   }
 
   Map<String, dynamic> toJson() => {
-    'description': description,
-    if (uniqueId != null) 'uniqueId': uniqueId,
-  };
+        'description': description,
+        if (uniqueId != null) 'uniqueId': uniqueId,
+      };
 
   ResidualLesions copyWith({
     String? description,

@@ -1,7 +1,6 @@
 import 'package:equatable/equatable.dart';
 
 abstract class INewsCategory extends Equatable {
-
   final String urlToImage;
   final String category;
 
@@ -9,7 +8,6 @@ abstract class INewsCategory extends Equatable {
     required this.urlToImage,
     required this.category,
   });
-
 
   @override
   bool get stringify => true;

@@ -15,9 +15,9 @@ class Procedure {
   }
 
   Map<String, dynamic> toJson() => {
-    'description': description,
-    if (uniqueId != null) 'uniqueId': uniqueId,
-  };
+        'description': description,
+        if (uniqueId != null) 'uniqueId': uniqueId,
+      };
 
   Procedure copyWith({
     String? description,

@@ -57,23 +57,19 @@ class TaskRoutine extends ITask {
       title: map['title'] as String,
       description: map['description'] as String,
       isCompleted: map['isCompleted'] as bool,
-      deadline: map['deadline'] is String
-        ? DateTime.parse(map['deadline'])
-        : map['deadline'] as DateTime,
-      startDate: map['startDate'] is String
-        ? DateTime.parse(map['startDate'])
-        : map['startDate'] as DateTime,
+      deadline: map['deadline'] is String ? DateTime.parse(map['deadline']) : map['deadline'] as DateTime,
+      startDate: map['startDate'] is String ? DateTime.parse(map['startDate']) : map['startDate'] as DateTime,
       type: map['type'] as String,
       notifications: map['notifications'] != null
-        ? List<ScheduledNotification>.from(
-            (map['notifications'] as List).map((x) {
-              if (x is ScheduledNotification) {
-                return x;
-              }
-              return ScheduledNotification.fromMap(x as Map<String, dynamic>);
-            }),
-          )
-        : [],
+          ? List<ScheduledNotification>.from(
+              (map['notifications'] as List).map((x) {
+                if (x is ScheduledNotification) {
+                  return x;
+                }
+                return ScheduledNotification.fromMap(x as Map<String, dynamic>);
+              }),
+            )
+          : [],
     );
   }
 }

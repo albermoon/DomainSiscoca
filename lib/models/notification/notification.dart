@@ -5,7 +5,7 @@ enum NotificationType {
   local,
   taskAlert,
   appointment,
-  news, 
+  news,
   medication,
   taskRoutine,
 }
@@ -47,7 +47,7 @@ class Notification extends Equatable {
     Map<String, dynamic>? additionalData,
     DateTime? scheduledFor,
     DateTime? endDate,
-    bool? isRead, 
+    bool? isRead,
   }) {
     return Notification(
       id: id ?? this.id,
@@ -56,7 +56,7 @@ class Notification extends Equatable {
       timestamp: timestamp ?? this.timestamp,
       type: type ?? this.type,
       additionalData: additionalData ?? this.additionalData,
-      imageUrl:  imageUrl ?? this.imageUrl,
+      imageUrl: imageUrl ?? this.imageUrl,
       scheduledFor: scheduledFor ?? this.scheduledFor,
       endDate: endDate ?? this.endDate,
       isRead: isRead ?? this.isRead,

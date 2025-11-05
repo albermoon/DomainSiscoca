@@ -18,8 +18,8 @@ class Pathology {
   }
 
   Map<String, dynamic> toJson() => {
-    if (uniqueId != null) 'uniqueId': uniqueId,
-    'generalPathology': generalPathology,
-    'specificPathology': specificPathology,
-  };
+        if (uniqueId != null) 'uniqueId': uniqueId,
+        'generalPathology': generalPathology,
+        'specificPathology': specificPathology,
+      };
 }

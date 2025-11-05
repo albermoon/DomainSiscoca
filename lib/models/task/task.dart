@@ -97,7 +97,7 @@ class Task {
     );
   }
 
-   Map<String, dynamic> toJson() {
+  Map<String, dynamic> toJson() {
     return {
       if (id != null) 'id': id!,
       'name': name,

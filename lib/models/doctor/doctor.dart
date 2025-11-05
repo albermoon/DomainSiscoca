@@ -9,15 +9,7 @@ class Doctor {
   final String surname;
   final Hospital? hospital;
 
-  Doctor({
-    this.id,
-    this.status,
-    required this.email,
-    required this.isAdmin,
-    required this.name,
-    required this.surname,
-    this.hospital
-  });
+  Doctor({this.id, this.status, required this.email, required this.isAdmin, required this.name, required this.surname, this.hospital});
 
   factory Doctor.fromJson(Map<String, dynamic> json) {
     return Doctor(
@@ -34,15 +26,15 @@ class Doctor {
   }
 
   Map<String, dynamic> toJson() => {
-    // Nullable fields
-     if (id != null) 'id': id,
-    
-    // Required fields
-    'email': email,
-    'is_admin': isAdmin,
-    'name': name,
-    'surname': surname,
-  };
+        // Nullable fields
+        if (id != null) 'id': id,
+
+        // Required fields
+        'email': email,
+        'is_admin': isAdmin,
+        'name': name,
+        'surname': surname,
+      };
 
   Doctor copyWith({
     String? id,
