@@ -26,10 +26,8 @@ class Article {
   });
 
   factory Article.fromJson(Map<String, dynamic> map) {
-    final categoriesList = (map['categories'] as List<dynamic>?)
-            ?.map((category) => NewsCategory.fromJson(category as Map<String, dynamic>))
-            .toList() ??
-        [];
+    final categoriesList =
+        (map['categories'] as List<dynamic>?)?.map((category) => NewsCategory.fromJson(category as Map<String, dynamic>)).toList() ?? [];
 
     return Article(
       id: map['id'] as int,
