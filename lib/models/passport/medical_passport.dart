@@ -38,17 +38,21 @@ class MedicalPassport {
       clinicalInfo: ClinicalInfo.fromJson(json['clinical_info']),
       createdAt: DateTime.parse(json['created_at']),
       doctorId: json['doctor_id'],
-      documentsOthers: json['documents_others'],
+      documentsOthers: json['documents_others'] ?? '',
       id: json['id'],
-      medications: List<Medication>.from(json['medications'].map((x) => Medication.fromJson(x))),
+      medications: json['medications'] != null
+          ? List<Medication>.from(json['medications'].map((x) => Medication.fromJson(x)))
+          : [],
       pathology: Pathology.fromJson(json['pathology']),
       patientConstants: List<PatientConstant>.from(json['patient_constants'].map((x) => PatientConstant.fromJson(x))),
       patientId: json['patient_id'].toString(),
       procedures: List<Procedure>.from(json['procedures'].map((x) => Procedure.fromJson(x))),
       residualLesions: List<ResidualLesions>.from(json['residual_lesions'].map((x) => ResidualLesions.fromJson(x))),
-      studies: List<Study>.from(json['studies'].map((x) => Study.fromJson(x))),
+      studies: json['studies'] != null
+          ? List<Study>.from(json['studies'].map((x) => Study.fromJson(x)))
+          : [],
       updatedAt: DateTime.parse(json['updated_at']),
-      studyIdList: List<int>.from(json['study_id_list']),
+      studyIdList: json['study_id_list'] != null ? List<int>.from(json['study_id_list']) : [],
     );
   }
 

@@ -46,12 +46,21 @@ class ScheduledNotification {
   }
 
   static DateTime _parseHour(dynamic hourString) {
-    if (hourString == null) ;
+    if (hourString == null) {
+      return DateTime.now();
+    }
     if (hourString is String) {
       final parts = hourString.split(':');
-      if (parts.length == 2) {
+      if (parts.length == 3) {
         final now = DateTime.now();
-        return DateTime(now.year, now.month, now.day, int.parse(parts[0]), int.parse(parts[1]));
+        return DateTime(
+          now.year,
+          now.month,
+          now.day,
+          int.parse(parts[0]),
+          int.parse(parts[1]),
+          int.parse(parts[2]),
+        );
       }
     }
     return DateTime.parse(hourString.toString());

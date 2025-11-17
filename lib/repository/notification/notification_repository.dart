@@ -8,9 +8,9 @@ abstract class NotificationsRepository {
 
   Future<void> saveNotification(Notification notification);
   Future<void> showImmediateNotification(Notification notification);
-  List<Notification> getUnreadNotifications();
+  Future<List<Notification>> getUnreadNotifications();
   Future<List<Notification>> getNotifications();
-  List<Notification> getPendingNotifications();
+  Future<List<Notification>> getPendingNotifications();
 
   Future<bool> isNotificationTypeEnabled(NotificationType type);
 
