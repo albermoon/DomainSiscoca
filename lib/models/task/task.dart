@@ -12,14 +12,14 @@ class Task {
   final int taskTypeId;
   final int? recurrence_interval;
   //json with the survey
-  final TaskDetails details;
+  final TaskDetails? details;
   final String? createdAt;
   final String? updatedAt;
   final int? status;
 
   Task({
     required this.name,
-    required this.details,
+    this.details,
     required this.description,
     this.advertisement,
     this.assignedTasks,
@@ -111,7 +111,7 @@ class Task {
       if (updatedAt != null) 'updated_at': updatedAt!,
       if (status != null) 'status': status!,
       if (recurrence_interval != null) 'recurrence_interval': recurrence_interval!,
-      ...details.toJson(),
+      if (details != null) ...details!.toJson(),
     };
   }
 }

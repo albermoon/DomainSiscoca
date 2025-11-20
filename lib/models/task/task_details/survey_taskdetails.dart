@@ -1,12 +1,17 @@
 import 'task_details.dart';
 
 class SurveyTaskDetails implements TaskDetails {
-  final Map<String, dynamic> questions;
+  final int? surveyId;
+  final Map<String, dynamic>? questions;
 
-  SurveyTaskDetails({required this.questions});
+  SurveyTaskDetails({
+    this.surveyId,
+    this.questions,
+  });
 
   factory SurveyTaskDetails.fromJson(Map<String, dynamic> json) {
     return SurveyTaskDetails(
+      surveyId: json['survey_id'] as int?,
       questions: json['questions'] as Map<String, dynamic>? ?? {},
     );
   }
@@ -14,7 +19,8 @@ class SurveyTaskDetails implements TaskDetails {
   @override
   Map<String, dynamic> toJson() {
     return {
-      'questions': questions,
+      if (surveyId != null) 'survey_id': surveyId,
+      if (questions != null) 'questions': questions,
     };
   }
 }
