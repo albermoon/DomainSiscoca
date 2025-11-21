@@ -26,8 +26,6 @@ class TaskResponse {
     }
 
     TaskResponseDetails? details;
-    
-    // Determinar el tipo de details basándose en el taskType si está disponible
     if (taskType != null) {
       switch (taskType.name.toLowerCase()) {
         case 'survey':
@@ -57,22 +55,11 @@ class TaskResponse {
       }
     }
 
-    // Parse task from 'task_base'
+    // Parse task from 'task'
     Task? task;
-    if (json['task_base'] != null && taskType != null) {
-      final taskBase = json['task_base'] as Map<String, dynamic>;
-      task = Task(
-        id: json['task_id'] as int,
-        name: taskBase['name'] as String,
-        description: taskBase['description'] as String,
-        advertisement: taskBase['advertisement'] as String?,
-        recurrence_interval: taskBase['recurrence_interval'] as int?,
-        taskTypeId: taskBase['task_type_id'] as int,
-        status: taskBase['status'] as int?,
-        taskType: TaskType.fromJson(json['task_type'] as Map<String, dynamic>),
-        // Details is null - will be loaded on demand if needed
-        details: null,
-      );
+    if (json['task'] != null) {
+      final taskData = json['task'] as Map<String, dynamic>;
+      task = Task.fromJson(taskData);
     }
 
     return TaskResponse(
