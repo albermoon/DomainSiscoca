@@ -61,7 +61,7 @@ class MedicalPassport {
         if (clinicalInfo != null) 'clinical_info': clinicalInfo!.toJson(),
         'doctor_id': doctorId,
         'documents_others': documentsOthers,
-        'medications': medications.map((x) => x.toJson()).toList(),
+        'medications': medications.map((x) => x.toMap()).toList(),
         'pathology': pathology.toJson(),
         'patient_constants': patientConstants.map((x) => x.toJson()).toList(),
         'patient_id': patientId,
