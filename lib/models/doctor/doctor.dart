@@ -28,6 +28,7 @@ class Doctor {
   Map<String, dynamic> toJson() => {
         // Nullable fields
         if (id != null) 'id': id,
+        if (hospital?.id != null) 'hospital_id': hospital!.id,
 
         // Required fields
         'email': email,
@@ -43,6 +44,7 @@ class Doctor {
     int? isAdmin,
     String? name,
     String? surname,
+    Hospital? hospital,
   }) {
     return Doctor(
       id: id ?? this.id,
