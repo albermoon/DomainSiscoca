@@ -1,5 +1,3 @@
-import '../hospital/hospital.dart';
-
 class Doctor {
   final String? id;
   final int? status;
@@ -7,28 +5,28 @@ class Doctor {
   final int isAdmin;
   final String name;
   final String surname;
-  final Hospital? hospital;
+  final int? hospitalId;
 
-  Doctor({this.id, this.status, required this.email, required this.isAdmin, required this.name, required this.surname, this.hospital});
+  Doctor({this.id, this.status, required this.email, required this.isAdmin, required this.name, required this.surname, this.hospitalId});
 
   factory Doctor.fromJson(Map<String, dynamic> json) {
     return Doctor(
       // Nullable fields
       id: json['id'],
       status: json['status'] ?? 1,
+      hospitalId: json['hospital_id'],
       // Required fields
       email: json['email'] ?? '',
       isAdmin: json['is_admin'] ?? 0,
       name: json['name'] ?? '',
       surname: json['surname'] ?? '',
-      hospital: json['hospital'] != null ? Hospital.fromJson(json['hospital']) : null,
     );
   }
 
   Map<String, dynamic> toJson() => {
         // Nullable fields
         if (id != null) 'id': id,
-        if (hospital?.id != null) 'hospital_id': hospital!.id,
+        if (hospitalId != null) 'hospital_id': hospitalId,
 
         // Required fields
         'email': email,
@@ -44,7 +42,7 @@ class Doctor {
     int? isAdmin,
     String? name,
     String? surname,
-    Hospital? hospital,
+    int? hospitalId,
   }) {
     return Doctor(
       id: id ?? this.id,
@@ -53,7 +51,7 @@ class Doctor {
       isAdmin: isAdmin ?? this.isAdmin,
       name: name ?? this.name,
       surname: surname ?? this.surname,
-      hospital: hospital ?? this.hospital,
+      hospitalId: hospitalId ?? this.hospitalId,
     );
   }
 }
