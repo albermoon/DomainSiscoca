@@ -53,6 +53,7 @@ class Article {
       'read_time': readingTime,
       'description': description,
       'news_url': newsUrl,
+      if (status != null) 'status': status,
       'categories': categories.map((c) => c.toJson()).toList(),
     };
   }
