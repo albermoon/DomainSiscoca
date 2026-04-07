@@ -45,7 +45,7 @@ class User extends Equatable {
       birthDate: birthDateFormatted,
       device: json['device'],
       patientNumber: json['num_patient'],
-      sex: json['sex'],
+      sex: json['sex']?.toString(),
     );
   }
 
