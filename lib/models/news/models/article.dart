@@ -55,7 +55,6 @@ class Article {
       'news_url': newsUrl,
       if (status != null) 'status': status,
       'categories': categories.map((c) => c.toJson()).toList(),
-      if (status != null) 'status': status,
     };
   }
 
