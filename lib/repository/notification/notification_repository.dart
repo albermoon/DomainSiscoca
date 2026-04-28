@@ -6,6 +6,10 @@ abstract class NotificationsRepository {
   Future<void> requestPermissions();
   Future<bool> isPermissionGranted();
 
+  /// Sets the active language for locally-scheduled notifications.
+  /// Pass an ISO language code such as `'en'` or `'es'`.
+  void setLanguage(String languageCode);
+
   Future<void> saveNotification(Notification notification);
   Future<void> showImmediateNotification(Notification notification);
   Future<List<Notification>> getUnreadNotifications();
